@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 /**
  * Hashing syntax class
- * @author tddix
+ * @author Tyler Dixon
+ * @author Ethan Von Hagel
  *
  */
 public class Hashing extends Driver{
