@@ -1,6 +1,7 @@
 /**
  * Program created to represent Face-to-Face order taking from a guest
  * @author Tyler Dixon
+ * @author Ethan Von Hagel
  */
 package menu.cfa;
 
