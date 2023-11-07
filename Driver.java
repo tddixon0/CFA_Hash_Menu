@@ -3,9 +3,10 @@
  * @author Tyler Dixon
  * @author Ethan Von Hagel
  */
-package menu.cfa;
+//package menu.cfa;
 
 import java.util.*;
+//Example 
 
 public class Driver {
 	static Scanner scanner = new Scanner(System.in);
