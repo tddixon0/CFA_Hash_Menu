@@ -6,7 +6,9 @@
 //package menu.cfa;
 
 import java.util.*;
-//Example 
+//Example 1
+//example 2
+//example 3
 
 public class Driver {
 	static Scanner scanner = new Scanner(System.in);
