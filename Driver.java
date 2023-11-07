@@ -3,9 +3,12 @@
  * @author Tyler Dixon
  * @author Ethan Von Hagel
  */
-package menu.cfa;
+//package menu.cfa;
 
 import java.util.*;
+//Example 1
+//example 2
+//example 3
 
 public class Driver {
 	//test
