@@ -8,7 +8,7 @@ package menu.cfa;
 import java.util.*;
 
 public class Driver {
-	//main
+	//test
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
 	static Breakfast bfast = new Breakfast();
