@@ -1,8 +1,3 @@
-/**
- * Hashing syntax class
- * @author TD
- * @author EV
- */
 
 import java.io.*;
 import java.util.*;

@@ -5,8 +5,12 @@
  */
 
 import java.util.*;
+//Example 1
+//example 2
+//example 3
 
 public class Driver {
+	//test
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
 	static Breakfast bfast = new Breakfast();

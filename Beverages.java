@@ -1,7 +1,3 @@
-/**
- * @author TD
- * @author EVH
- */
 
 import java.util.HashMap;
 import java.util.Map;
