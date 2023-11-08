@@ -1,9 +1,8 @@
 /**
  * Program created to represent Face-to-Face order taking from a guest
- * @author Tyler Dixon
- * @author Ethan Von Hagel
+ * @author TylerDixon
+ * @author EthanVonHagel
  */
-package menu.cfa;
 
 import java.util.*;
 
