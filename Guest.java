@@ -1,9 +1,8 @@
-//package menu.cfa;
 
 /**
  * Gets customers name who is placing the order
- * @author tyler dixon
- * @author Ethan Von Hagel
+ * @author TD
+ * @author EVH
  */
 public class Guest {
 	private String guestName;
