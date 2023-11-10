@@ -1,16 +1,12 @@
 /**
- * Program created to represent Face-to-Face order taking from a guest
+ * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * @author TylerDixon
  * @author EthanVonHagel
  */
 
 import java.util.*;
-//Example 1
-//example 2
-//example 3
 
 public class Driver {
-	//test
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
 	static Breakfast bfast = new Breakfast();
@@ -25,7 +21,7 @@ public class Driver {
 	public static void main (String[] args) {
 		Driver driver = new Driver();
 		driver.greeting();
-//		entree.main(args);
+		entree.main(args);
 	}
 	
 	/**
@@ -49,9 +45,13 @@ public class Driver {
 		newGuest = new Guest(scanner.nextLine());
 		System.out.println("Hello " + newGuest + ", How may I serve you today?");
 		System.out.println("Take a look at our menu with the matching price");
-		//using Hashmap, of course
 		System.out.println("Just type \"menu\"");
-		menu();
+			if (scanner.nextLine().equals("menu")) {
+				menu();
+			} else if (scanner.nextLine() != "menu"){
+//				greeting();
+				System.out.println("What?");
+			}
 	}//end greeting
 	
 	/**
