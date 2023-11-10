@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
+=======
+ * Program created to represent Face-to-Face order taking from a guest
+>>>>>>> a68b2a809eab56529340390ff2932118d27776eb
  * @author TylerDixon
  * @author EthanVonHagel
  */

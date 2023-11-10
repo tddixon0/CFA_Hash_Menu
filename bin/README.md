@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # COSC450
 
 #Remaining topics to finish:
@@ -12,3 +13,6 @@ Make a simple if else and input a custom, hard coded 6/8digit pin. If pin = ID c
 Have somewhere to ask if you have discount.
 
 Are you employee? Yes, then ask for ID number. No continue with order taking.
+=======
+# COSC450
+>>>>>>> a68b2a809eab56529340390ff2932118d27776eb
