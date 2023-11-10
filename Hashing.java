@@ -1,15 +1,9 @@
-package menu.cfa;
 
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-/**
- * Hashing syntax class
- * @author Tyler Dixon
- * @author Ethan Von Hagel
- *
- */
+
 public class Hashing extends Driver{
 	private int curSize, maxSize;
 	private String[] name; //key
