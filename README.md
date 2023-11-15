@@ -12,3 +12,9 @@ Make a simple if else and input a custom, hard coded 6/8digit pin. If pin = ID c
 Have somewhere to ask if you have discount.
 
 Are you employee? Yes, then ask for ID number. No continue with order taking.
+
+##TONIGHT
+Employee login
+Make Hashing work
+Cart (Add all the items up to print out a final total) 
+GUI
