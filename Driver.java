@@ -5,6 +5,7 @@
  * @author EthanVonHagel
  */
 
+import java.io.*;
 import java.util.*;
 
 public class Driver {
@@ -23,9 +24,7 @@ public class Driver {
 	public static void main (String[] args) {
 		Driver driver = new Driver();
 		driver.id();
-//		driver.greeting();
-//		entree.main(args);
-	}
+	}//end main
 	
 	/**
 	 * This sets input from user as String to return to next line
@@ -46,13 +45,21 @@ public class Driver {
 		case "06671687":
 		case "00000000":
 		case "0":
-			System.out.println("User credentials accepted.");
+			System.out.println("User credentials accepted.");	
+			System.out.println("Thank you for choosing Chick-fil-A!");
 			greeting();
-			default:
+			break;
+		default:
 			System.out.println("Please enter a valid Employee ID");
+			id();
+			break;
 		}//end switch
 			
 	}//end id
+	public void order() {
+		System.out.println("What would you like?");
+		
+	}
 	
 	/**
 	 * Introduction to the conversation
@@ -60,25 +67,35 @@ public class Driver {
 	 */
 	public void greeting() {
 		Guest newGuest;
-		System.out.println("Thank you for choosing Chick-fil-A!");
 		System.out.println("May I have a name for the order?");
 		newGuest = new Guest(scanner.nextLine());
 		System.out.println("Hello " + newGuest + ", How may I serve you today?");
-		System.out.println("Take a look at our menu with the matching prices");
-		System.out.println("Just type \"menu\"");
-			if (scanner.nextLine().equals("menu")) {
-				menu();
-			} else if (scanner.nextLine() != "menu"){
-//				greeting();
-				System.out.println("What?");
-			}
+		System.out.println("Take a look at our menu with the matching prices by saying \"menu\"");
+			String strInput = input("If you'd like to order, just say \"order\"");
+			System.out.println();
+				switch(strInput.toLowerCase()){
+				case "menu":
+				case "Menu":
+					menu();
+					break;
+				case "order":
+				case "Order":
+					order();
+					break;
+				default:
+					System.out.println("Please enter a valid command.");
+					greeting();
+					break;
+			}//end switch		
 	}//end greeting
+	
+	
 
 	/**
 	 * Select which menu to see
 	 */
 	public void menu() {
-		System.out.println("Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
+		System.out.println("Our menus are: Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
 		String strInput = input("Which menu would you like to see?");
 		switch(strInput.toLowerCase()) {
 		case "beverages":
@@ -89,6 +106,7 @@ public class Driver {
 			menu();
 			break;
 		case "breakfast":
+		case "bfast":
 			breakfastMenu();
 			menu();
 			break;
@@ -122,88 +140,174 @@ public class Driver {
 	}//end menu
 	
 	private void treatMenu() {
-		System.out.printf("Frosted Lemonaid\t $%.2f\n", bfast.get("Frosted Lemonaid"));
-		System.out.printf("Frosted Coffee\t $%.2f\n", bfast.get("Frosted Coffee"));
-		System.out.printf("Cookie\t $%.2f\n", bfast.get("Cookie"));
-		System.out.printf("Brownie\t $%.2f\n", bfast.get("Brownie"));
-		System.out.printf("Milkshake\t $%.2f\n", bfast.get("Milkshake"));
-		System.out.printf("IceDream Cup\t $%.2f\n", bfast.get("IceDream Cup"));
-		System.out.printf("IceDream Cone\t $%.2f\n", bfast.get("IceDream Cone"));
-
+		Map<String, Double> dessert = new HashMap<String, Double>();
+		dessert.put("Frosted Lemonaid", 4.19);
+		dessert.put("Frosted Coffee", 4.19);
+		dessert.put("Cookie", 1.55);
+		dessert.put("Brownie", 2.15);
+		dessert.put("Milkshake", 4.29);
+		dessert.put("IceDream Cup", 1.35);
+		dessert.put("IceDream Cone", 1.69);
 		
-	}
+		System.out.printf("Frosted Lemonaid\t $%.2f\n", dessert.get("Frosted Lemonaid"));
+		System.out.printf("Frosted Coffee\t $%.2f\n", dessert.get("Frosted Coffee"));
+		System.out.printf("Cookie\t $%.2f\n", dessert.get("Cookie"));
+		System.out.printf("Brownie\t $%.2f\n", dessert.get("Brownie"));
+		System.out.printf("Milkshake\t $%.2f\n", dessert.get("Milkshake"));
+		System.out.printf("IceDream Cup\t $%.2f\n", dessert.get("IceDream Cup"));
+		System.out.printf("IceDream Cone\t $%.2f\n", dessert.get("IceDream Cone"));
+	}//end treatMenu
 
 	private void sideMenu() {
-		System.out.printf("Small Fry\t $%.2f\n", bfast.get("Small Fry"));
-		System.out.printf("Medium Fry\t $%.2f\n", bfast.get("Medium Fry"));
-		System.out.printf("Large Fry\t $%.2f\n", bfast.get("Large Fry"));
-		System.out.printf("Small Fruit Cup\t $%.2f\n", bfast.get("Small Fruit Cup"));
-		System.out.printf("Medium Fruit Cup\t $%.2f\n", bfast.get("Medium Fruit Cup"));
-		System.out.printf("Side Salad\t $%.2f\n", bfast.get("Side Salad"));
-		System.out.printf("Small Mac and Cheese\t $%.2f\n", bfast.get("Small Mac and Cheese"));
-		System.out.printf("Medium Mac and Cheese\t $%.2f\n", bfast.get("Medium Mac and Cheese"));
-		System.out.printf("Cup Chicken Noode Soup\t $%.2f\n", bfast.get("Cup Chicken Noode Soup"));
-		System.out.printf("Bowl Chicken Noodle Soup\t $%.2f\n", bfast.get("Bowl Chicken Noodle Soup"));
-		System.out.printf("Cup Tortilla Soup\t $%.2f\n", bfast.get("Cup Tortilla Soup"));
-		System.out.printf("Bowl Tortilla Soup\t $%.2f\n", bfast.get("Bowl Tortilla Soup"));
-		System.out.printf("Kale Crunch Side Salad\t $%.2f\n", bfast.get("Kale Crunch Side Salad"));
-		System.out.printf("Cookie Parfait\t $%.2f\n", bfast.get("Cookie Parfait"));
-		System.out.printf("Granola Parfait\t $%.2f\n", bfast.get("Granola Parfait"));
-		System.out.printf("Chips\t $%.2f\n", bfast.get("Chips"));
-		System.out.printf("Kids Apple Sauce\t $%.2f\n", bfast.get("Kids Apple Sauce"));
+		Map<String, Double> side = new HashMap<String, Double>();
+		side.put("Small Fry", 2.09);
+		side.put("Medium Fry", 2.35);
+		side.put("Large Fry", 2.75);
+		side.put("Small Fruit Cup", 2.99);
+		side.put("Medium Fruit Cup", 3.95);
+		side.put("Side Salad", 3.95);
+		side.put("Small Mac and Cheese", 3.15);
+		side.put("Medium Mac and Cheese", 3.95);
+		side.put("Cup Chicken Noode Soup", 3.75);
+		side.put("Bowl Chicken Noodle Soup", 5.69);
+		side.put("Cup Tortilla Soup", 5.19);
+		side.put("Bowl Tortilla Soup", 7.95);
+		side.put("Kale Crunch Side Salad", 2.35);
+		side.put("Cookie Parfait", 4.65);
+		side.put("Granola Parfait", 4.65);
+		side.put("Chips", 1.99);
+		side.put("Kids Apple Sauce", 2.29);
 		
-	}
+		System.out.printf("Small Fry\t $%.2f\n", side.get("Small Fry"));
+		System.out.printf("Medium Fry\t $%.2f\n", side.get("Medium Fry"));
+		System.out.printf("Large Fry\t $%.2f\n", side.get("Large Fry"));
+		System.out.printf("Small Fruit Cup\t $%.2f\n", side.get("Small Fruit Cup"));
+		System.out.printf("Medium Fruit Cup\t $%.2f\n", side.get("Medium Fruit Cup"));
+		System.out.printf("Side Salad\t $%.2f\n", side.get("Side Salad"));
+		System.out.printf("Small Mac and Cheese\t $%.2f\n", side.get("Small Mac and Cheese"));
+		System.out.printf("Medium Mac and Cheese\t $%.2f\n", side.get("Medium Mac and Cheese"));
+		System.out.printf("Cup Chicken Noode Soup\t $%.2f\n", side.get("Cup Chicken Noode Soup"));
+		System.out.printf("Bowl Chicken Noodle Soup\t $%.2f\n", side.get("Bowl Chicken Noodle Soup"));
+		System.out.printf("Cup Tortilla Soup\t $%.2f\n", side.get("Cup Tortilla Soup"));
+		System.out.printf("Bowl Tortilla Soup\t $%.2f\n", side.get("Bowl Tortilla Soup"));
+		System.out.printf("Kale Crunch Side Salad\t $%.2f\n", side.get("Kale Crunch Side Salad"));
+		System.out.printf("Cookie Parfait\t $%.2f\n", side.get("Cookie Parfait"));
+		System.out.printf("Granola Parfait\t $%.2f\n", side.get("Granola Parfait"));
+		System.out.printf("Chips\t $%.2f\n", side.get("Chips"));
+		System.out.printf("Kids Apple Sauce\t $%.2f\n", side.get("Kids Apple Sauce"));
+	}//end sideMenu
 
 	private void saladMenu() {
-		System.out.printf("Cobb Salad\t $%.2f\n", bfast.get("Cobb Salad"));
-		System.out.printf("Spicy Southwest Salad\t $%.2f\n", bfast.get("Spicy Southwest Salad"));
-		System.out.printf("Market Salad\t $%.2f\n", bfast.get("Market Salad"));
+		Map<String, Double> salad = new HashMap<String, Double>();
+		salad.put("Cobb Salad", 9.39);
+		salad.put("Spicy Southwest Salad", 9.59);
+		salad.put("Market Salad", 9.59);
+		
+		System.out.printf("Cobb Salad\t $%.2f\n", salad.get("Cobb Salad"));
+		System.out.printf("Spicy Southwest Salad\t $%.2f\n", salad.get("Spicy Southwest Salad"));
+		System.out.printf("Market Salad\t $%.2f\n", salad.get("Market Salad"));
 
 	}//end saladMenu
 
 	private void entreeMenu() {
-		System.out.printf("CFA Sandwhich\t $%.2f\n", bfast.get("CFA Sandwhich"));
-		System.out.printf("CFA Delux\t $%.2f\n", bfast.get("CFA Delu"));
-		System.out.printf("Spicy Sandwhich\t $%.2f\n", bfast.get("Spicy Sandwhich"));
-		System.out.printf("Spicy Delux\t $%.2f\n", bfast.get("Spicy Delux"));
-		System.out.printf("Grilled Sandwhich\t $%.2f\n", bfast.get("Grilled Sandwhich"));
-		System.out.printf("Grilled Club\t $%.2f\n", bfast.get("Grilled Club"));
-		System.out.printf("5 Nuggets\t $%.2f\n", bfast.get("5 Nuggets"));
-		System.out.printf("8 Nuggets\t $%.2f\n", bfast.get("8 Nuggets"));
-		System.out.printf("12 Nuggets\t $%.2f\n", bfast.get("12 Nuggets"));
-		System.out.printf("30 Nuggets\t $%.2f\n", bfast.get("30 Nuggets"));
-		System.out.printf("5 Grilled Nuggets\t $%.2f\n", bfast.get("5 Grilled Nuggets"));
-		System.out.printf("8 Grilled Nuggets\t $%.2f\n", bfast.get("8 Grilled Nuggets"));
-		System.out.printf("12 Grilled Nuggets\t $%.2f\n", bfast.get("12 Grilled Nuggets"));
-		System.out.printf("2 Strip\t $%.2f\n", bfast.get("2 Strip"));
-		System.out.printf("3 Strip\t $%.2f\n", bfast.get("3 Strip"));
-		System.out.printf("4 Strip\t $%.2f\n", bfast.get("4 Strip"));
-		System.out.printf("Wrap\t $%.2f\n", bfast.get("Wrap"));
-		System.out.printf("Filet\t $%.2f\n", bfast.get("Filet"));
-		System.out.printf("Grilled Filet\t $%.2f\n", bfast.get("Grilled Filet"));
-		System.out.printf("Spicy Filet\t $%.2f\n", bfast.get("Spicy Filet"));
+		Map<String, Double> entree = new HashMap<String, Double>();
+		entree.put("CFA Sandwhich", 4.75);
+		entree.put("CFA Delux", 5.45);
+		entree.put("Spicy Sandwhich", 5.15);
+		entree.put("Spicy Delux", 5.85);
+		entree.put("Grilled Sandwhich", 6.29);
+		entree.put("Grilled Club", 7.99);
+		entree.put("5 Nuggets", 3.00);
+		entree.put("8 Nuggets", 4.75);
+		entree.put("12 Nuggets", 6.65);
+		entree.put("30 Nuggets", 16.59);
+		entree.put("5 Grilled Nuggets", 3.50);
+		entree.put("8 Grilled Nuggets", 5.59);
+		entree.put("12 Grilled Nuggets", 7.99);
+		entree.put("2 Strip", 3.39);
+		entree.put("3 Strip", 4.99);
+		entree.put("4 Strip", 6.39);
+		entree.put("Wrap", 7.59);
+		entree.put("Filet", 4.50);
+		entree.put("Grilled Filet", 5.35);
+		entree.put("Spicy Filet", 4.90);
+		
+		System.out.printf("CFA Sandwhich\t $%.2f\n", entree.get("CFA Sandwhich"));
+		System.out.printf("CFA Delux\t $%.2f\n", entree.get("CFA Delux"));
+		System.out.printf("Spicy Sandwhich\t $%.2f\n", entree.get("Spicy Sandwhich"));
+		System.out.printf("Spicy Delux\t $%.2f\n", entree.get("Spicy Delux"));
+		System.out.printf("Grilled Sandwhich\t $%.2f\n", entree.get("Grilled Sandwhich"));
+		System.out.printf("Grilled Club\t $%.2f\n", entree.get("Grilled Club"));
+		System.out.printf("5 Nuggets\t $%.2f\n", entree.get("5 Nuggets"));
+		System.out.printf("8 Nuggets\t $%.2f\n", entree.get("8 Nuggets"));
+		System.out.printf("12 Nuggets\t $%.2f\n", entree.get("12 Nuggets"));
+		System.out.printf("30 Nuggets\t $%.2f\n", entree.get("30 Nuggets"));
+		System.out.printf("5 Grilled Nuggets\t $%.2f\n", entree.get("5 Grilled Nuggets"));
+		System.out.printf("8 Grilled Nuggets\t $%.2f\n", entree.get("8 Grilled Nuggets"));
+		System.out.printf("12 Grilled Nuggets\t $%.2f\n", entree.get("12 Grilled Nuggets"));
+		System.out.printf("2 Strip\t $%.2f\n", entree.get("2 Strip"));
+		System.out.printf("3 Strip\t $%.2f\n", entree.get("3 Strip"));
+		System.out.printf("4 Strip\t $%.2f\n", entree.get("4 Strip"));
+		System.out.printf("Wrap\t $%.2f\n", entree.get("Wrap"));
+		System.out.printf("Filet\t $%.2f\n", entree.get("Filet"));
+		System.out.printf("Grilled Filet\t $%.2f\n", entree.get("Grilled Filet"));
+		System.out.printf("Spicy Filet\t $%.2f\n", entree.get("Spicy Filet"));
 
 	}//end entreeMenu
 
 	private void beverageMenu() {
-		System.out.printf("Small Tea\t $%.2f\n", bfast.get("Small Tea"));
-		System.out.printf("Medium Tea\t $%.2f\n", bfast.get("Medium Tea"));
-		System.out.printf("Large Tea\t $%.2f\n", bfast.get("Large Tea"));
-		System.out.printf("Small Lemonaid\t $%.2f\n", bfast.get("Small Lemonaid"));
-		System.out.printf("Medium Lemonaid\t $%.2f\n", bfast.get("Medium Lemonaid"));
-		System.out.printf("Large Lemonaid\t $%.2f\n", bfast.get("Large Lemonaid"));
-		System.out.printf("Small Sunjoy\t $%.2f\n", bfast.get("Small Sunjoy"));
-		System.out.printf("Medium Sunjoy\t $%.2f\n", bfast.get("Medium Sunjoy"));
-		System.out.printf("Large Sunjoy\t $%.2f\n", bfast.get("Large Sunjoy"));
-		System.out.printf("Small Soft Drink\t $%.2f\n", bfast.get("Small Soft Drink"));
-		System.out.printf("Medium Soft Drink\t $%.2f\n", bfast.get("Medium Soft Drink"));
-		System.out.printf("Large Soft Drink\t $%.2f\n", bfast.get("Large Soft Drink"));
-		System.out.printf("Gallon of Tea\t $%.2f\n", bfast.get("Gallon of Tea"));
-		System.out.printf("Gallon Lemonaid\t $%.2f\n", bfast.get("Gallon Lemonaid"));
+		Map<String, Double> bev = new HashMap<String, Double>();
+		bev.put("Small Tea", 1.79);
+		bev.put("Medium Tea", 2.15);
+		bev.put("Large Tea", 2.55);
+		bev.put("Small Lemonaid", 2.15);
+		bev.put("Medium Lemonaid", 2.49);
+		bev.put("Large Lemonaid", 2.95);
+		bev.put("Small Sunjoy", 2.15);
+		bev.put("Medium Sunjoy", 2.49);
+		bev.put("Large Sunjoy", 2.95);
+		bev.put("Small soft drink", 1.79);
+		bev.put("Medium soft drink", 2.15);
+		bev.put("Large soft drink", 2.55);
+		bev.put("Gallon Tea", 6.25);
+		bev.put("Gallon Lemonaid", 12.00);
+		
+		System.out.printf("Small Tea\t $%.2f\n", bev.get("Small Tea"));
+		System.out.printf("Medium Tea\t $%.2f\n", bev.get("Medium Tea"));
+		System.out.printf("Large Tea\t $%.2f\n", bev.get("Large Tea"));
+		System.out.printf("Small Lemonaid\t $%.2f\n", bev.get("Small Lemonaid"));
+		System.out.printf("Medium Lemonaid\t $%.2f\n", bev.get("Medium Lemonaid"));
+		System.out.printf("Large Lemonaid\t $%.2f\n", bev.get("Large Lemonaid"));
+		System.out.printf("Small Sunjoy\t $%.2f\n", bev.get("Small Sunjoy"));
+		System.out.printf("Medium Sunjoy\t $%.2f\n", bev.get("Medium Sunjoy"));
+		System.out.printf("Large Sunjoy\t $%.2f\n", bev.get("Large Sunjoy"));
+		System.out.printf("Small Soft Drink\t $%.2f\n", bev.get("Small soft drink"));
+		System.out.printf("Medium Soft Drink\t $%.2f\n", bev.get("Medium soft drink"));
+		System.out.printf("Large Soft Drink\t $%.2f\n", bev.get("Large soft drink"));
+		System.out.printf("Gallon of Tea\t $%.2f\n", bev.get("Gallon Tea"));
+		System.out.printf("Gallon Lemonaid\t $%.2f\n", bev.get("Gallon Lemonaid"));
 		
 	}//end beverageMenu
 
 	private void breakfastMenu() {
+		Map<String, Double> bfast = new HashMap<String, Double>();
+		bfast.put("Chicken Biscuit", 3.49);
+		bfast.put("4 minis", 4.49);
+		bfast.put("10 minis", 11.19);
+		bfast.put("Egg White Grill", 4.85);
+		bfast.put("Hash Brown Scramble Burrito", 4.75);
+		bfast.put("Hash Brown Scramble Bowl", 4.75);
+		bfast.put("Chicken Egg Cheese Biscuit", 4.39);
+		bfast.put("Bacon Egg Cheese Buscuit", 3.79);
+		bfast.put("Sausage Egg Cheese Buscuit", 3.79);
+		bfast.put("Chicken Egg Cheese Muffin", 4.59);
+		bfast.put("Bacon Egg Cheese Muffin", 3.99);
+		bfast.put("Sausage Egg Cheese Muffin", 3.99);
+		bfast.put("Buttered Biscuit", 1.49);
+		bfast.put("English Muffin", 1.69);
+		bfast.put("Hash Browns", 1.49);
+		bfast.put("Breakfast Filet", 2.00);
+		
 		System.out.printf("Chicken Buscuit\t $%.2f\n", bfast.get("Chicken Biscuit"));
 		System.out.printf("4 minis\t $%.2f\n", bfast.get("4 minis"));
 		System.out.printf("10 minis\t $%.2f\n", bfast.get("10 minis"));
@@ -222,7 +326,5 @@ public class Driver {
 		System.out.printf("Breakfast Filet\t $%.2f\n", bfast.get("Breakfast Filet"));
 
 	}//end breakfastMenu
-	
-	
 	
 }//end Driver

@@ -19,6 +19,13 @@ public class Treats extends Driver{
 		dessert.put("IceDream Cup", 1.35);
 		dessert.put("IceDream Cone", 1.69);
 
+		System.out.printf("Frosted Lemonaid\t $%.2f\n", dessert.get("Frosted Lemonaid"));
+		System.out.printf("Frosted Coffee\t $%.2f\n", dessert.get("Frosted Coffee"));
+		System.out.printf("Cookie\t $%.2f\n", dessert.get("Cookie"));
+		System.out.printf("Brownie\t $%.2f\n", dessert.get("Brownie"));
+		System.out.printf("Milkshake\t $%.2f\n", dessert.get("Milkshake"));
+		System.out.printf("IceDream Cup\t $%.2f\n", dessert.get("IceDream Cup"));
+		System.out.printf("IceDream Cone\t $%.2f\n", dessert.get("IceDream Cone"));
 	}
 
 }

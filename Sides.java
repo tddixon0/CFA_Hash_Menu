@@ -29,7 +29,23 @@ public class Sides extends Driver{
 		side.put("Chips", 1.99);
 		side.put("Kids Apple Sauce", 2.29);
 
-		
+		System.out.printf("Small Fry\t $%.2f\n", side.get("Small Fry"));
+		System.out.printf("Medium Fry\t $%.2f\n", side.get("Medium Fry"));
+		System.out.printf("Large Fry\t $%.2f\n", side.get("Large Fry"));
+		System.out.printf("Small Fruit Cup\t $%.2f\n", side.get("Small Fruit Cup"));
+		System.out.printf("Medium Fruit Cup\t $%.2f\n", side.get("Medium Fruit Cup"));
+		System.out.printf("Side Salad\t $%.2f\n", side.get("Side Salad"));
+		System.out.printf("Small Mac and Cheese\t $%.2f\n", side.get("Small Mac and Cheese"));
+		System.out.printf("Medium Mac and Cheese\t $%.2f\n", side.get("Medium Mac and Cheese"));
+		System.out.printf("Cup Chicken Noode Soup\t $%.2f\n", side.get("Cup Chicken Noode Soup"));
+		System.out.printf("Bowl Chicken Noodle Soup\t $%.2f\n", side.get("Bowl Chicken Noodle Soup"));
+		System.out.printf("Cup Tortilla Soup\t $%.2f\n", side.get("Cup Tortilla Soup"));
+		System.out.printf("Bowl Tortilla Soup\t $%.2f\n", side.get("Bowl Tortilla Soup"));
+		System.out.printf("Kale Crunch Side Salad\t $%.2f\n", side.get("Kale Crunch Side Salad"));
+		System.out.printf("Cookie Parfait\t $%.2f\n", side.get("Cookie Parfait"));
+		System.out.printf("Granola Parfait\t $%.2f\n", side.get("Granola Parfait"));
+		System.out.printf("Chips\t $%.2f\n", side.get("Chips"));
+		System.out.printf("Kids Apple Sauce\t $%.2f\n", side.get("Kids Apple Sauce"));
 	}//end main
 
 }//end Sides
