@@ -60,4 +60,8 @@ public class Entrees extends Driver{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	public void put(String string, double d) {
+		// TODO Auto-generated method stub
+		
+	}
 }//end Entrees
