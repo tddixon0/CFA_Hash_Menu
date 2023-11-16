@@ -14,7 +14,13 @@ Have somewhere to ask if you have discount.
 Are you employee? Yes, then ask for ID number. No continue with order taking.
 
 ##TONIGHT
-Employee login
 Make Hashing work
 Cart (Add all the items up to print out a final total) 
 GUI
+
+#Ideas to solve
+Maybe just have a menu item paired with a number (Asian restaurant, EX: E4 or D3 or even just a number like 56)
+
+#COMPLETED
+Employee Login using an ID
+

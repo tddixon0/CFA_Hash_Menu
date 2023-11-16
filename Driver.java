@@ -17,12 +17,14 @@ public class Driver {
 	static Salads salads = new Salads();
 	static Sides side = new Sides();
 	static Treats treat = new Treats();
+//	static ID id = new ID();
 //	Hashing hash = new Hashing(0);
 	
 	public static void main (String[] args) {
 		Driver driver = new Driver();
-		driver.greeting();
-		entree.main(args);
+		driver.id();
+//		driver.greeting();
+//		entree.main(args);
 	}
 	
 	/**
@@ -36,16 +38,33 @@ public class Driver {
 	}//end input
 	
 	/**
+	 * This will verify if the user is an employee
+	 */
+	private void id() {
+		String strInput = input("Do you have an ID? Enter it now:");
+		switch(strInput.toLowerCase()) {
+		case "06671687":
+		case "00000000":
+		case "0":
+			System.out.println("User credentials accepted.");
+			greeting();
+			default:
+			System.out.println("Please enter a valid Employee ID");
+		}//end switch
+			
+	}//end id
+	
+	/**
 	 * Introduction to the conversation
 	 * Asks the guest for their name and uses it while talking
 	 */
 	public void greeting() {
 		Guest newGuest;
-		System.out.println("Thank you for choosing Chick-fil-A LaVale.");
+		System.out.println("Thank you for choosing Chick-fil-A!");
 		System.out.println("May I have a name for the order?");
 		newGuest = new Guest(scanner.nextLine());
 		System.out.println("Hello " + newGuest + ", How may I serve you today?");
-		System.out.println("Take a look at our menu with the matching price");
+		System.out.println("Take a look at our menu with the matching prices");
 		System.out.println("Just type \"menu\"");
 			if (scanner.nextLine().equals("menu")) {
 				menu();
@@ -54,13 +73,13 @@ public class Driver {
 				System.out.println("What?");
 			}
 	}//end greeting
-	
+
 	/**
 	 * Select which menu to see
 	 */
 	public void menu() {
+		System.out.println("Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
 		String strInput = input("Which menu would you like to see?");
-		System.out.println("Choose between: Beverages, Breakfast, Entrees, Salads, Sides, and Treats");
 		switch(strInput.toLowerCase()) {
 		case "beverages":
 		case "beverage":
@@ -74,7 +93,7 @@ public class Driver {
 			menu();
 			break;
 		case "entree":
-			entreeMenu();
+			entreeMenu(); 
 			menu();
 			break;
 		case "salads":
@@ -101,7 +120,7 @@ public class Driver {
 		}//end switch
 		
 	}//end menu
-
+	
 	private void treatMenu() {
 		System.out.printf("Frosted Lemonaid\t $%.2f\n", bfast.get("Frosted Lemonaid"));
 		System.out.printf("Frosted Coffee\t $%.2f\n", bfast.get("Frosted Coffee"));
@@ -202,6 +221,8 @@ public class Driver {
 		System.out.printf("Hash Browns\t $%.2f\n", bfast.get("Hash Browns"));
 		System.out.printf("Breakfast Filet\t $%.2f\n", bfast.get("Breakfast Filet"));
 
-}//end breakfastMenu
+	}//end breakfastMenu
+	
+	
 	
 }//end Driver
