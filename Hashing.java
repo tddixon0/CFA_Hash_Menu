@@ -21,7 +21,7 @@ public class Hashing extends Driver{
 	}//end Hashing
 	
 	/**
-	 * Get with Modulous
+	 * Get with Modulus
 	 * @param KEY
 	 * @return
 	 */

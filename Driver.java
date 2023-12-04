@@ -5,7 +5,6 @@
  * @author EthanVonHagel
  */
 
-import java.io.*;
 import java.util.*;
 
 public class Driver {
@@ -40,11 +39,13 @@ public class Driver {
 	 * This will verify if the user is an employee
 	 */
 	private void id() {
-		String strInput = input("Do you have an ID? Enter it now:");
+		String strInput = input("Do you have an ID? If not, enter \"Guest\":");
 		switch(strInput.toLowerCase()) {
 		case "1687":
 		case "2023":
 		case "0":
+		case "Guest":
+		case "guest":
 			System.out.println("User credentials accepted.");	
 			System.out.println("Thank you for choosing Chick-fil-A!");
 			greeting();
@@ -128,15 +129,15 @@ public class Driver {
 			case "6":
 				System.out.println("Would you like 5, 8, or 12 grilled nuggets?");
 				order();
-			case "5 grilled":
+			case "5 grilled nuggets":
 				System.out.printf("5 grilled nuggets is\t $%s%n", "3.50");
 				end();
 				break;
-			case "8 grilled":
+			case "8 grilled nuggets":
 				System.out.printf("8 grilled nuggets is\t $%s%n", "5.59");
 				end();
 				break;
-			case "12 grilled":
+			case "12 grilled nuggets":
 				System.out.printf("12 grilled nuggets is\t $%s%n", "7.99");
 				end();
 				break;
@@ -218,8 +219,15 @@ public class Driver {
 				end();
 				break;
 			case "Hash Brown scramble bowl":
+				System.out.printf("That will be\t $%s%n", "4.75");
+				end();
+				break;
 			case "Hash brown scramble burrito":
 				System.out.printf("That will be\t $%s%n", "4.75");
+				end();
+				break;
+			case "chicken egg cheese biscuit":
+				System.out.printf("That will be\t $%s%n", "4.39");
 				end();
 				break;
 			case "CEC biscuit":
@@ -227,20 +235,49 @@ public class Driver {
 				end();
 				break;
 			case "BEC biscuit":
-			case "SEC busciut":
 				System.out.printf("That will be\t $%s%n", "4.79");
+				end();
+				break;
+			case "bacon egg cheese biscuit":
+				System.out.printf("That will be\t $%s%n", "4.79");
+				end();
+				break;
+			case "SEC bisciut":
+				System.out.printf("That will be\t $%s%n", "4.79");
+				end();
+				break;
+			case "sausage egg cheese biscuit":
+				System.out.printf("That will be\t $%s%n", "4.79");
+				end();
+				break;
+			case "chicken egg cheese muffin":
+				System.out.printf("That will be\t $%s%n", "4.59");
 				end();
 				break;
 			case "CEC muffin":
 				System.out.printf("That will be\t $%s%n", "4.59");
 				end();
 				break;
+			case "bacon egg cheese muffin":
+				System.out.printf("That will be\t $%s%n", "3.99");
+				end();
+				break;
 			case "BEC muffin":
+				System.out.printf("That will be\t $%s%n", "3.99");
+				end();
+				break;
+			case "sausage egg cheese muffin":
+				System.out.printf("That will be\t $%s%n", "3.99");
+				end();
+				break;
 			case "SEC muffin":
 				System.out.printf("That will be\t $%s%n", "3.99");
 				end();
 				break;
 			case "Buttered buscuit":
+				System.out.printf("That will be\t $%s%n", "1.49");
+				end();
+				break;
 			case "Hash brown":
 				System.out.printf("That will be\t $%s%n", "1.49");
 				end();
@@ -255,15 +292,27 @@ public class Driver {
 				break;
 //begin salads
 			case "Cobb salad":
+			case "cobb":
 				System.out.printf("That will be\t $%s%n", "9.39");
 				end();
 				break;
 			case "Spicy Southwest Salad":
+				System.out.printf("That will be\t $%s%n", "9.59");
+				end();
+				break;
 			case "Southwest salad":
+				System.out.printf("That will be\t $%s%n", "9.59");
+				end();
+				break;
 			case "Market salad":
 				System.out.printf("That will be\t $%s%n", "9.59");
 				end();
 				break;
+			case "salad":
+				System.out.printf("That will be\t $%s%n", "9.59");
+				end();
+				break;
+			
 //begin sides
 			case "small fry":
 				System.out.printf("That will be\t $%s%n", "2.09");
@@ -357,7 +406,7 @@ public class Driver {
 	public void end() {
 		System.out.println("Thank you for choosing Chick-fil-A!");
 		System.exit(0);
-	}
+	}//end end
 	
 	/**
 	 * Introduction to the conversation
