@@ -26,3 +26,9 @@ Employee Login using an ID
 
 #VON
 Need to install a C/C++ Dev package something
+
+#CRUNCH TIME
+SQL for menu and prices
+Have a "cart function" that sums up prices selected
+Return in interface
+GUI in Java
