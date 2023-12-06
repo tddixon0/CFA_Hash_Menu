@@ -5,7 +5,7 @@
 #include <QtWidgets/QVBoxLayout>
 
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
+    QApplication gui(argc, argv);
 
     // Create a main window
     QWidget mainWindow;
@@ -34,5 +34,5 @@ int main(int argc, char *argv[]) {
     mainWindow.show();
 
     // Start the application event loop
-    return app.exec();
+    return gui.exec();
 }
