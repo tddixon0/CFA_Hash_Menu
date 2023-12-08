@@ -4,6 +4,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QVBoxLayout>
 
+//test
 int main(int argc, char *argv[]) {
     QApplication gui(argc, argv);
 
