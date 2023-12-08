@@ -98,8 +98,9 @@ private void Message() {
         inputField.setText("");
 
         UserInput(message);
-        order(message);
         entree(message);
+        order(message);
+        
     }
 }//end sendMessage
 
