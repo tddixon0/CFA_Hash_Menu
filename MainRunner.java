@@ -64,7 +64,8 @@ public class MainRunner {
 //begin entrees			
 			case "1":
 			case "cfa sandwhich":
-				System.out.printf("A CFA Sandwhich is\t $%s%n", "4.75");
+//				System.out.printf("A CFA Sandwhich is\t $%s%n", "4.75");
+				entree.get("cfa sandwhich");
 				end();
 				break;
 
