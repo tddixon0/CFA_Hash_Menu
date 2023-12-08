@@ -115,3 +115,14 @@ insert into Treats (TID,TName,Price) values
     (5,'Milkshake',4.29),
     (6,'Ice Dream Cup',1.35),
     (7,'Ice Dream Cone',1.69);
+create table Login (
+	Password	varchar(10)	not null,
+    Username	varchar(15)	not null);
+insert into Login (Username,Password) values
+	('etvonhagel0','1234'),
+    ('tdixon0','5678');
+select * from Sides;
+select * from Beverages;
+select * from Entree;
+select * from Breakfast;
+select * from Treats;
