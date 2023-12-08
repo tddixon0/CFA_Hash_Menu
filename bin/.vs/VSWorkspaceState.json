@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin"
   ],
-  "SelectedNode": "\\Driver.class",
+  "SelectedNode": "\\bin\\gui.cpp",
   "PreviewInSolutionExplorer": false
 }
