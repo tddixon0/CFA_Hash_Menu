@@ -1,10 +1,10 @@
-# COSC450
+# CFA_Menu is under construction for dirty code
 
-#Remaining topics to finish:
+#Desired topics to finish:
 #Cart function
 Have a running count of all items want to purchase, and add up value when asked.
-#Website as interface
-GPT 
+#Interface
+
 #Reward System
 "you earned 50 points from this purchase"
 #Employee login
@@ -23,9 +23,6 @@ Maybe just have a menu item paired with a number (Asian restaurant, EX: E4 or D3
 
 #COMPLETED
 Employee Login using an ID
-
-#VON
-Need to install a C/C++ Dev package something
 
 #CRUNCH TIME
 SQL for menu and prices
