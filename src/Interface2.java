@@ -74,16 +74,6 @@ public class Interface2 {
         });
     }//end main
     
-    /**
-	 * This sets input from user as String to return to next line
-	 * @param input
-	 * @return
-	 */
-	private String input(String input) {
-		System.out.println(input);
-		return scanner.nextLine();
-	}//end input
-    
     private void Message() {
         String message = inputField.getText();
         if (!message.isEmpty()) {

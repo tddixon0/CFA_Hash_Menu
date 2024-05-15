@@ -58,6 +58,7 @@ public class JDBC {
         }
     }
     public static void cart(String item) {
+        @SuppressWarnings("unused")
         double sum = 0;
         double price = 0;
         String food = item;
