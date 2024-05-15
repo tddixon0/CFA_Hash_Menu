@@ -1,9 +1,5 @@
 package src;
 
-import java.io.*;
-import java.util.*;
-import java.util.Scanner;
-
 
 public class Hashing extends Driver{
 	private int curSize, maxSize;
@@ -96,7 +92,7 @@ public class Hashing extends Driver{
 		while(!KEY.equals(name[i]))
 			i = (i + 1) % maxSize;
 		Double.parseDouble(null);
-		name[i] = price[i] = null;
+		// name[i] = price[i] = null;
 		
 		curSize--;
 	}//end remove
