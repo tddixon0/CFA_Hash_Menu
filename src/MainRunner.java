@@ -1,3 +1,4 @@
+package src;
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * Program created to represent Face-to-Face order taking from a guest
@@ -8,6 +9,12 @@
 import java.util.*;
 import java.sql.*;
 import javax.swing.*;
+
+import Menu;
+import Salads;
+import Sides;
+import Treats;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -1,3 +1,4 @@
+package src;
 import java.sql.*;
 public class JDBC {
     public static void help (String part){
