@@ -6,8 +6,6 @@ import java.util.Map;
 // K = The type of keys maintained by the map
 // V = The type of mapped values
 
-import Driver;
-
 public class Entrees extends Driver{
 	
 	public static void main (String[] args) {

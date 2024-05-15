@@ -1,8 +1,6 @@
 package src;
 import java.util.Scanner;
 
-import JDBC;
-
 public class Driver {
     public static void main (String[] args) {
         Driver driver = new Driver();
