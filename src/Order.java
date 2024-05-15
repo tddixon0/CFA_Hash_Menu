@@ -3,7 +3,6 @@ import java.util.*;
 public class Order {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		List<Integer> order = new ArrayList<Integer>();
 		
 //		String strInput = input("Are you ready to order? Go ahead!");
