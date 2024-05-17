@@ -7,6 +7,14 @@ package src;
  */
 
 import javax.swing.*;
+
+import src.Menu.Beverages;
+import src.Menu.Breakfast;
+import src.Menu.Entrees;
+import src.Menu.Salads;
+import src.Menu.Sides;
+import src.Menu.Treats;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
