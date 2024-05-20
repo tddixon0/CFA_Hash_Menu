@@ -6,23 +6,15 @@ package CFA_Menu.src;
  * @author EthanVonHagel
  */
 
-<<<<<<< HEAD:MainRunner.java
 
-import java.util.*;
-import java.sql.*;
 import javax.swing.*;
+import CFA_Menu.src.Menu.Beverages;
+import CFA_Menu.src.Menu.Breakfast;
+import CFA_Menu.src.Menu.Entrees;
+import CFA_Menu.src.Menu.Salads;
+import CFA_Menu.src.Menu.Sides;
+import CFA_Menu.src.Menu.Treats;
 
-=======
-import javax.swing.*;
-
-import src.Menu.Beverages;
-import src.Menu.Breakfast;
-import src.Menu.Entrees;
-import src.Menu.Salads;
-import src.Menu.Sides;
-import src.Menu.Treats;
-
->>>>>>> f46477c79f9bb0d7e32710d85cb2d4002aa43836:src/MainRunner.java
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
