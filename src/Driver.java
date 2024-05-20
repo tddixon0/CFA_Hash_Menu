@@ -1,4 +1,4 @@
-package src;
+package CFA_Menu.src;
 import java.util.Scanner;
 
 public class Driver {

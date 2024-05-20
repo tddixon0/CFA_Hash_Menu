@@ -1,4 +1,4 @@
-package src;
+package CFA_Menu.src;
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * Program created to represent Face-to-Face order taking from a guest
@@ -6,14 +6,14 @@ package src;
  * @author EthanVonHagel
  */
 
-import javax.swing.*;
 
-import src.Menu.Beverages;
-import src.Menu.Breakfast;
-import src.Menu.Entrees;
-import src.Menu.Salads;
-import src.Menu.Sides;
-import src.Menu.Treats;
+import javax.swing.*;
+import CFA_Menu.src.Menu.Beverages;
+import CFA_Menu.src.Menu.Breakfast;
+import CFA_Menu.src.Menu.Entrees;
+import CFA_Menu.src.Menu.Salads;
+import CFA_Menu.src.Menu.Sides;
+import CFA_Menu.src.Menu.Treats;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,7 +35,6 @@ public class MainRunner {
 	private JFrame frame;
     private JTextArea chatArea;
     private JTextField inputField;
-    
 	
 	/**
 	 * ------------------------------------------------------
@@ -44,7 +43,6 @@ public class MainRunner {
 	 */
 	
 public void Interface2() {
-    	
     	/**
     	 * main frame
     	 */

@@ -1,4 +1,4 @@
-package src;
+package CFA_Menu.src;
 
 /**
  * Gets customers name who is placing the order

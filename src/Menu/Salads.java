@@ -1,4 +1,4 @@
-package src.Menu;
+package CFA_Menu.src.Menu;
 
 /**
  * @author TD
