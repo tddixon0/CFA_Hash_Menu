@@ -1,4 +1,4 @@
-package src;
+package CFA_Menu.src;
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * Program created to represent Face-to-Face order taking from a guest
