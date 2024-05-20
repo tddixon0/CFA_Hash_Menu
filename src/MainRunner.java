@@ -123,7 +123,7 @@ private void UserInput(String input) {
         chatArea.append("CFATwo: Goodbye!\n");
         // You can exit the application or perform other actions here
     } else {
-        chatArea.append("CFATwox: I didn't understand that. Type 'help' for assistance.\n");
+        chatArea.append("CFATwo: I didn't understand that. Type 'help' for assistance.\n");
     }
 }//end UserInput
 
