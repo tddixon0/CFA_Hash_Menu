@@ -1,9 +1,7 @@
-package CFA_Menu.src.Menu;
+package src;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import src.Driver;
 
 public class Beverages extends Driver{
 	
