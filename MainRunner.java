@@ -5,9 +5,11 @@
  * @author EthanVonHagel
  */
 
+
 import java.util.*;
 import java.sql.*;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,7 +30,6 @@ public class MainRunner {
 	private JFrame frame;
     private JTextArea chatArea;
     private JTextField inputField;
-    
 	
 	/**
 	 * ------------------------------------------------------
@@ -37,7 +38,6 @@ public class MainRunner {
 	 */
 	
 public void Interface2() {
-    	
     	/**
     	 * main frame
     	 */
