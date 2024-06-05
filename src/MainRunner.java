@@ -1,4 +1,4 @@
-package CFA_Menu.src;
+package src;
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * Program created to represent Face-to-Face order taking from a guest
@@ -6,23 +6,9 @@ package CFA_Menu.src;
  * @author EthanVonHagel
  */
 
-<<<<<<< HEAD:MainRunner.java
 
-import java.util.*;
-import java.sql.*;
 import javax.swing.*;
 
-=======
-import javax.swing.*;
-
-import src.Menu.Beverages;
-import src.Menu.Breakfast;
-import src.Menu.Entrees;
-import src.Menu.Salads;
-import src.Menu.Sides;
-import src.Menu.Treats;
-
->>>>>>> f46477c79f9bb0d7e32710d85cb2d4002aa43836:src/MainRunner.java
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -129,7 +115,7 @@ private void UserInput(String input) {
         chatArea.append("CFATwo: Goodbye!\n");
         // You can exit the application or perform other actions here
     } else {
-        chatArea.append("CFATwox: I didn't understand that. Type 'help' for assistance.\n");
+        chatArea.append("CFATwo: I didn't understand that. Type 'help' for assistance.\n");
     }
 }//end UserInput
 

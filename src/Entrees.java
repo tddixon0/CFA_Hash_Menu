@@ -1,12 +1,10 @@
-package CFA_Menu.src.Menu;
+package src;
 
 import java.util.HashMap;
 import java.util.Map;
 //Map<K,V>
 // K = The type of keys maintained by the map
 // V = The type of mapped values
-
-import src.Driver;
 
 public class Entrees extends Driver{
 	

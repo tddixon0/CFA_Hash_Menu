@@ -1,4 +1,4 @@
-package CFA_Menu.src.Menu;
+package src;
 
 /**
  * @author TD
@@ -10,8 +10,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import src.Driver;
 
 public class Salads extends Driver{
 	

@@ -1,4 +1,4 @@
-package CFA_Menu.src.Menu;
+package src;
 
 /**
  * @author TD
@@ -7,8 +7,6 @@ package CFA_Menu.src.Menu;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import src.Driver;
 
 public class Treats extends Driver{
 	
