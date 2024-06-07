@@ -19,9 +19,9 @@
 
 ## Introduction
 
-This application began during my 30 minute breaks on shift while I was working at Chick-fil-A. I was University studying Computer Science at the same time, and coding absolutley facinated me. I wouldn't stop until I was good, even though "good" is a relative term for how novice I was.
+This application began during my 30 minute breaks on shift while I was working at Chick-fil-A. I was in University studying Computer Science at the same time, and coding absolutley facinated me. I wouldn't stop until I was good, even though "good" is a relative term for how novice I was.
 
-Eventually I had a senior sowcase to display this project, and I still want to take it even further.
+Eventually I had a senior showcase to display this project, and I still want to take it even further.
 
 
 ## Features
