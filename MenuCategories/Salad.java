@@ -11,12 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import src.Driver;
-
-public class Salads extends Driver{
+public class Salad {
 	
-	public static void main (String[] args) {
-		Map<String, Double> salad = new HashMap<String, Double>();
+	public Map<String, Object> salad() {
+		Map<String, Object> salad = new HashMap<String, Object>();
 		salad.put("Cobb Salad", 9.39);
 		salad.put("Spicy Southwest Salad", 9.59);
 		salad.put("Market Salad", 9.59);
@@ -24,6 +22,7 @@ public class Salads extends Driver{
 		System.out.printf("Cobb Salad\t $%.2f\n", salad.get("Cobb Salad"));
 		System.out.printf("Spicy Southwest Salad\t $%.2f\n", salad.get("Spicy Southwest Salad"));
 		System.out.printf("Market Salad\t $%.2f\n", salad.get("Market Salad"));
+			return salad;
 	}//end main
 	
 	public static boolean hasDuplicate(List<Double> list) {

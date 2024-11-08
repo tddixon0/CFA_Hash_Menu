@@ -8,12 +8,10 @@ package MenuCategories;
 import java.util.HashMap;
 import java.util.Map;
 
-import src.Driver;
-
-public class Treats extends Driver{
+public class Treat {
 	
-	public static void main (String[] args) {
-		Map<String, Double> dessert = new HashMap<String, Double>();
+	public Map<String, Object> treat() {
+		Map<String, Object> dessert = new HashMap<String, Object>();
 		dessert.put("Frosted Lemonaid", 4.19);
 		dessert.put("Frosted Coffee", 4.19);
 		dessert.put("Cookie", 1.55);
@@ -29,6 +27,8 @@ public class Treats extends Driver{
 		System.out.printf("Milkshake\t $%.2f\n", dessert.get("Milkshake"));
 		System.out.printf("IceDream Cup\t $%.2f\n", dessert.get("IceDream Cup"));
 		System.out.printf("IceDream Cone\t $%.2f\n", dessert.get("IceDream Cone"));
-	}
+	
+	return dessert;
+}
 
 }

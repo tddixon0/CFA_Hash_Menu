@@ -3,9 +3,7 @@ package MenuCategories;
 import java.util.HashMap;
 import java.util.Map;
 
-import src.Driver;
-
-public class Breakfast extends Driver{
+public class Breakfast{
 
 	public static final Double CB = 3.49;
 

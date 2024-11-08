@@ -8,10 +8,10 @@ package src;
 
 import MenuCategories.Beverages;
 import MenuCategories.Breakfast;
-import MenuCategories.Entrees;
-import MenuCategories.Salads;
-import MenuCategories.Sides;
-import MenuCategories.Treats;
+import MenuCategories.Entree;
+import MenuCategories.Salad;
+import MenuCategories.Side;
+import MenuCategories.Treat;
 import src.Interface2;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,12 +23,12 @@ public class MainRunner {
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
 	static Breakfast bfast = new Breakfast();
-	static Entrees entree = new Entrees();
+	static Entree entree = new Entree();
 	static Guest guest = new Guest(null);
 	static Menu menu = new Menu();
-	static Salads salads = new Salads();
-	static Sides side = new Sides();
-	static Treats treat = new Treats();
+	static Salad salads = new Salad();
+	static Side side = new Side();
+	static Treat treat = new Treat();
 //	static ID id = new ID();
 //	Hashing hash = new Hashing(0); 
     private JTextArea chatArea;
@@ -574,7 +574,7 @@ public class MainRunner {
 		case "beverage":
 		case "drinks":
 		case "drink":
-			Beverages.main(null);
+			Beverages.breakfast();
 //			beverageMenu();
 			order(strInput);
 			break;
@@ -589,19 +589,19 @@ public class MainRunner {
 			break;
 		case "salads":
 		case "salad":
-			Salads.main(null);
+			Salad.main(null);
 			order(strInput);
 			break;
 		case "sides":
 		case "side":
-			Sides.main(null);
+			Side.main(null);
 			order(strInput);
 			break;
 		case "treats":
 		case "treat":
 		case "desserts":
 		case "dessert":
-			Treats.main(null);
+			Treat.main(null);
 			order(strInput);
 			break;
 		default:

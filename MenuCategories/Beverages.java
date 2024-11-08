@@ -3,12 +3,10 @@ package MenuCategories;
 import java.util.HashMap;
 import java.util.Map;
 
-import src.Driver;
-
-public class Beverages extends Driver{
+public class Beverages {
 	
-	public static void main (String [] args) {
-		Map<String, Double> bev = new HashMap<String, Double>();
+	public Map<String, Object> beverages(Object object) {
+		Map<String, Object> bev = new HashMap<String, Object>();
 		bev.put("Small Tea", 1.79);
 		bev.put("Medium Tea", 2.15);
 		bev.put("Large Tea", 2.55);
@@ -39,6 +37,7 @@ public class Beverages extends Driver{
 		System.out.printf("Gallon of Tea\t $%.2f\n", bev.get("Gallon Tea"));
 		System.out.printf("Gallon Lemonaid\t $%.2f\n", bev.get("Gallon Lemonaid"));
 	
+		return bev;
 	}//end main
 	
 }
