@@ -77,7 +77,6 @@ public class Hashing extends Driver{
 	}//end insert
 	
 	private int hash(String[] name2) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -98,7 +97,6 @@ public class Hashing extends Driver{
 	}//end remove
 	
 	private boolean conatins(String[] name2) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

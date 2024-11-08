@@ -1,4 +1,5 @@
 package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,10 +13,10 @@ public class Interface2 {
     Scanner scanner = new Scanner(System.in);
 
     public Interface2() {
-    	
-    	/**
-    	 * main frame
-    	 */
+
+        /**
+         * main frame
+         */
         frame = new JFrame("Chat Box");
         frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,16 +65,16 @@ public class Interface2 {
         chatArea.append("Are you an employee or guest?.\n");
 
         frame.setVisible(true);
-    }//end public interface2
-    
+    }// end public interface2
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new Interface2();
             }
         });
-    }//end main
-    
+    }// end main
+
     private void Message() {
         String message = inputField.getText();
         if (!message.isEmpty()) {
@@ -81,9 +82,9 @@ public class Interface2 {
             inputField.setText("");
 
             UserInput(message);
-//            entree(message);
+            // entree(message);
         }
-    }//end sendMessage
+    }// end sendMessage
 
     private void UserInput(String input) {
         if (input.equalsIgnoreCase("help")) {
@@ -99,12 +100,10 @@ public class Interface2 {
         } else {
             chatArea.append("Chat Box: I didn't understand that. Type 'help' for assistance.\n");
         }
-    }//end UserInput
-    
-    
-    
+    }// end UserInput
+
     public void end() {
-		System.out.println("Thank you for choosing Chick-fil-A!");
-		System.exit(0);
-	}//end end
-}//end Interface2
+        System.out.println("Thank you for choosing Chick-fil-A!");
+        System.exit(0);
+    }// end end
+}// end Interface2

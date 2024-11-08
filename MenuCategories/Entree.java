@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Entree{
 	
-	public Map<String, Object> entreeMap() {
+	public static Map<String, Object> entree() {
 		Map<String, Object> entreeMap = new HashMap<String, Object>();
 			entreeMap.put("CFA Sandwhich", 4.75);
 			entreeMap.put("CFA Delux", 5.45);

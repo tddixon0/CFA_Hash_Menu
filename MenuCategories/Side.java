@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Side {
 	
-	public Map<String, Object> sides() {
+	public static Map<String, Object> sides() {
 		Map<String, Object> side = new HashMap<String, Object>();
 		side.put("Small Fry", 2.09);
 		side.put("Medium Fry", 2.35);

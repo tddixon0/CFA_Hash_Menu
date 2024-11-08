@@ -7,7 +7,7 @@ public class Breakfast{
 
 	public static final Double CB = 3.49;
 
-		public Map<String, Double> breakfast() {
+		public static Map<String, Double> breakfast() {
 		Map<String, Double> bfast = new HashMap<String, Double>();
 		bfast.put("Chicken Biscuit", 3.49);
 		bfast.put("4 minis", 4.49);

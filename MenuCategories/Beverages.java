@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Beverages {
-	
-	public Map<String, Object> beverages(Object object) {
+
+	public static Map<String, Object> beverageMenu() {
 		Map<String, Object> bev = new HashMap<String, Object>();
 		bev.put("Small Tea", 1.79);
 		bev.put("Medium Tea", 2.15);
@@ -21,7 +21,7 @@ public class Beverages {
 		bev.put("Large soft drink", 2.55);
 		bev.put("Gallon Tea", 6.25);
 		bev.put("Gallon Lemonaid", 12.00);
-		
+
 		System.out.printf("Small Tea\t $%.2f\n", bev.get("Small Tea"));
 		System.out.printf("Medium Tea\t $%.2f\n", bev.get("Medium Tea"));
 		System.out.printf("Large Tea\t $%.2f\n", bev.get("Large Tea"));
@@ -36,8 +36,8 @@ public class Beverages {
 		System.out.printf("Large Soft Drink\t $%.2f\n", bev.get("Large soft drink"));
 		System.out.printf("Gallon of Tea\t $%.2f\n", bev.get("Gallon Tea"));
 		System.out.printf("Gallon Lemonaid\t $%.2f\n", bev.get("Gallon Lemonaid"));
-	
+
 		return bev;
-	}//end main
-	
+	}// end main
+
 }

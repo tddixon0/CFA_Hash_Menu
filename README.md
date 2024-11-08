@@ -23,33 +23,37 @@ This application began during my 30 minute breaks on shift while I was working a
 
 Eventually I had a senior showcase to display this project, and I still want to take it even further.
 
-
 ## Features
+
 Description of features THAT ARE IN PROGRESS
 
-* SQL for menu and prices
-* GUI
-* Cart function that sums up prices
-* Employee login. Make a simple if else and input a custom, hard coded 6/8digit pin. If pin = ID continue; else restart.
-* Discount- military or senior
-* Reward system
-
+- SQL for menu and prices
+- GUI
+- Cart function that sums up prices
+- Employee login. Make a simple if else and input a custom, hard coded 6/8digit pin. If pin = ID continue; else restart.
+- Discount- military or senior
+- Reward system
 
 ## Requirements
+
 The application can be run locally
 
 ## Quick Start
+
 Fire it up
 
 ## Testing
+
 Additional instructions for testing the application.
 
 ## API
+
 TODO: API Reference with examples, or a link to a wiki or other documentation source.
 
-##TO-DO
+## TO-DO
+
 Want to add spotless plugin to make code format nicer
 
-
 ## Acknowledgments
+
 Co-creator: Von

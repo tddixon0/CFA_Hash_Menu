@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class Salad {
 	
-	public Map<String, Object> salad() {
+	public static Map<String, Object> salad() {
 		Map<String, Object> salad = new HashMap<String, Object>();
 		salad.put("Cobb Salad", 9.39);
 		salad.put("Spicy Southwest Salad", 9.59);

@@ -1,10 +1,10 @@
 package src;
+
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
  * @author TylerDixon
  * @author EthanVonHagel
  */
-
 
 import MenuCategories.Beverages;
 import MenuCategories.Breakfast;
@@ -12,182 +12,62 @@ import MenuCategories.Entree;
 import MenuCategories.Salad;
 import MenuCategories.Side;
 import MenuCategories.Treat;
-import src.Interface2;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.*;
+
 
 public class MainRunner {
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
 	static Breakfast bfast = new Breakfast();
 	static Entree entree = new Entree();
-	static Guest guest = new Guest(null);
+	static Guest guest = new Guest();
 	static Menu menu = new Menu();
 	static Salad salads = new Salad();
 	static Side side = new Side();
 	static Treat treat = new Treat();
-//	static ID id = new ID();
-//	Hashing hash = new Hashing(0); 
-    private JTextArea chatArea;
-	
+	// static ID id = new ID();
+	// Hashing hash = new Hashing(0);
+	private static JTextArea chatArea;
 
-	/**
-	 * ------------------------------------------------------------------
-	 * @param args
-	 */
-
-	public static void main (String[] args) {
-		MainRunner driver = new MainRunner();
-		driver.id();
-	}//end main
+	public static void main(String[] args) {
+		MainRunner.id();
+	}// end main
 
 	/**
 	 * This sets input from user as String to return to next line
-	 * @param input
-	 * @return
 	 */
-	private String input(String input) {
+	private static String input(String input) {
 		chatArea.append(input);
 		return scanner.nextLine();
-	}//end input
+	}// end input
 
 	/**
 	 * This will verify if the user is an employee
 	 */
-	private void id() {
+	private static void id() {
 		String strInput = input("Do you have an ID? If not, enter \"Guest\":");
-		switch(strInput.toLowerCase()) {
-		case "1687":
-		case "2023":
-		case "0":
-		case "Guest":
-		case "guest":
-			chatArea.append("User credentials accepted.");	
-			chatArea.append("Thank you for choosing Chick-fil-A!");
-			greeting();
-			break;
-		default:
-			chatArea.append("Please enter a valid Employee ID");
-			id();
-			break;
-		}//end switch
-	}//end id
-	
+		switch (strInput.toLowerCase()) {
+			case "1687":
+			case "2023":
+			case "0":
+			case "Guest":
+			case "guest":
+				chatArea.append("User credentials accepted.");
+				chatArea.append("Thank you for choosing Chick-fil-A!");
+				greeting();
+				break;
+			default:
+				chatArea.append("Please enter a valid Employee ID");
+				id();
+				break;
+		}// end switch
+	}// end id
+
 	public void entree(String input) {
 		String strInput = input("What would you like?");
-		switch(strInput.toLowerCase()) {
-		case "1":
-		case "cfa sandwhich":
-			chatArea.append("A CFA Sandwhich is 4.75");
-			end();
-			break;
-
-		case "cfa delux":
-		case "1 delux":
-			chatArea.append("A CFA Delux is $5.45");
-			end();
-			break;
-
-		case "2":
-		case "spicy sandwhich": 
-			chatArea.append("A Spicy Sandwhich is $5.15");
-			end();
-			break;
-
-		case "spicy delux":
-		case "2 delux":
-			chatArea.append("A Spicy Delux is $5.85");
-			end();
-			break;
-
-		case "3":
-			chatArea.append("Would you like 5, 8, 12, or 30 nuggets?");
-			order(strInput);
-		case "5 nuggets":
-			chatArea.append("5 nuggets is $3.00");
-			end();
-			break;
-		case "8 nuggets":
-			chatArea.append("8 nuggets is is $4.75");
-			end();
-			break;
-		case "12 nuggets":
-			chatArea.append("12 nuggets is $6.68");
-			end();
-			break;
-		case "30 nuggets":
-			chatArea.append("30 nuggets is $16.59");
-			end();
-			break;
-
-		case "4":
-			chatArea.append("Would you like 2, 3, or 4 strips?");
-			order(strInput);
-		case "2 strips":
-			chatArea.append("2 strips is $3.39");
-			end();
-			break;
-		case "3 strips":
-			chatArea.append("3 strips is $4.99");
-			end();
-			break;
-		case "4 strips":
-			chatArea.append("4 strips  is $6.39");
-			end();
-			break;
-
-		case "5":
-			chatArea.append("A Grilled Sandwhich is $6.29");
-			end();
-			break;
-
-		case "6":
-			chatArea.append("Would you like 5, 8, or 12 grilled nuggets?");
-			order(strInput);
-		case "5 grilled nuggets":
-			chatArea.append("5 grilled nuggets is $3.50");
-			end();
-			break;
-		case "8 grilled nuggets":
-			chatArea.append("8 grilled nuggets is $5.59");
-			end();
-			break;
-		case "12 grilled nuggets":
-			chatArea.append("12 grilled nuggets is $7.99");
-			end();
-			break;
-
-		case "7":
-			chatArea.append("A Grilled Club is $7.99");
-			end();
-			break;
-
-		case "8":
-			chatArea.append("A Wrap is $7.59");
-			end();
-			break;
-		case "Filet":
-			chatArea.append("A filet is $4.50");
-			end();
-			break;
-		case "Grilled Filet":
-			chatArea.append("A grilled filet is $5.35");
-			end();
-			break;
-		case "Spicy Filet":
-			chatArea.append("A spicy filet is $4.90");
-			end();
-			break;
-		}
-	}
-
-	public void order(String input) {
-		String strInput = input("What would you like?");
-			switch(strInput.toLowerCase()) {
-//begin entrees			
+		switch (strInput.toLowerCase()) {
 			case "1":
 			case "cfa sandwhich":
 				chatArea.append("A CFA Sandwhich is 4.75");
@@ -196,19 +76,19 @@ public class MainRunner {
 
 			case "cfa delux":
 			case "1 delux":
-				chatArea.append("A CFA Delux is $5.45");
+				chatArea.append("A CFA Delux is .45");
 				end();
 				break;
 
 			case "2":
-			case "spicy sandwhich": 
-				chatArea.append("A Spicy Sandwhich is $5.15");
+			case "spicy sandwhich":
+				chatArea.append("A Spicy Sandwhich is .15");
 				end();
 				break;
 
 			case "spicy delux":
 			case "2 delux":
-				chatArea.append("A Spicy Delux is $5.85");
+				chatArea.append("A Spicy Delux is .85");
 				end();
 				break;
 
@@ -216,19 +96,19 @@ public class MainRunner {
 				chatArea.append("Would you like 5, 8, 12, or 30 nuggets?");
 				order(strInput);
 			case "5 nuggets":
-				chatArea.append("5 nuggets is $3.00");
+				chatArea.append("5 nuggets is .00");
 				end();
 				break;
 			case "8 nuggets":
-				chatArea.append("8 nuggets is is $4.75");
+				chatArea.append("8 nuggets is is .75");
 				end();
 				break;
 			case "12 nuggets":
-				chatArea.append("12 nuggets is $6.68");
+				chatArea.append("12 nuggets is .68");
 				end();
 				break;
 			case "30 nuggets":
-				chatArea.append("30 nuggets is $16.59");
+				chatArea.append("30 nuggets is .59");
 				end();
 				break;
 
@@ -236,20 +116,20 @@ public class MainRunner {
 				chatArea.append("Would you like 2, 3, or 4 strips?");
 				order(strInput);
 			case "2 strips":
-				chatArea.append("2 strips is $3.39");
+				chatArea.append("2 strips is .39");
 				end();
 				break;
 			case "3 strips":
-				chatArea.append("3 strips is $4.99");
+				chatArea.append("3 strips is .99");
 				end();
 				break;
 			case "4 strips":
-				chatArea.append("4 strips  is $6.39");
+				chatArea.append("4 strips  is .39");
 				end();
 				break;
 
 			case "5":
-				chatArea.append("A Grilled Sandwhich is $6.29");
+				chatArea.append("A Grilled Sandwhich is .29");
 				end();
 				break;
 
@@ -257,44 +137,153 @@ public class MainRunner {
 				chatArea.append("Would you like 5, 8, or 12 grilled nuggets?");
 				order(strInput);
 			case "5 grilled nuggets":
-				chatArea.append("5 grilled nuggets is $3.50");
+				chatArea.append("5 grilled nuggets is .50");
 				end();
 				break;
 			case "8 grilled nuggets":
-				chatArea.append("8 grilled nuggets is $5.59");
+				chatArea.append("8 grilled nuggets is .59");
 				end();
 				break;
 			case "12 grilled nuggets":
-				chatArea.append("12 grilled nuggets is $7.99");
+				chatArea.append("12 grilled nuggets is .99");
 				end();
 				break;
 
 			case "7":
-				chatArea.append("A Grilled Club is $7.99");
+				chatArea.append("A Grilled Club is .99");
 				end();
 				break;
 
 			case "8":
-				chatArea.append("A Wrap is $7.59");
+				chatArea.append("A Wrap is .59");
 				end();
 				break;
 			case "Filet":
-				chatArea.append("A filet is $4.50");
+				chatArea.append("A filet is .50");
 				end();
 				break;
 			case "Grilled Filet":
-				chatArea.append("A grilled filet is $5.35");
+				chatArea.append("A grilled filet is .35");
 				end();
 				break;
 			case "Spicy Filet":
-				chatArea.append("A spicy filet is $4.90");
+				chatArea.append("A spicy filet is .90");
 				end();
 				break;
-//begin drinks
+		}
+	}
+
+	public static void order(String input) {
+		String strInput = input("What would you like?");
+		switch (strInput.toLowerCase()) {
+			// begin entrees
+			case "1":
+			case "cfa sandwhich":
+				chatArea.append("A CFA Sandwhich is 4.75");
+				end();
+				break;
+
+			case "cfa delux":
+			case "1 delux":
+				chatArea.append("A CFA Delux is .45");
+				end();
+				break;
+
+			case "2":
+			case "spicy sandwhich":
+				chatArea.append("A Spicy Sandwhich is .15");
+				end();
+				break;
+
+			case "spicy delux":
+			case "2 delux":
+				chatArea.append("A Spicy Delux is .85");
+				end();
+				break;
+
+			case "3":
+				chatArea.append("Would you like 5, 8, 12, or 30 nuggets?");
+				order(strInput);
+			case "5 nuggets":
+				chatArea.append("5 nuggets is .00");
+				end();
+				break;
+			case "8 nuggets":
+				chatArea.append("8 nuggets is is .75");
+				end();
+				break;
+			case "12 nuggets":
+				chatArea.append("12 nuggets is .68");
+				end();
+				break;
+			case "30 nuggets":
+				chatArea.append("30 nuggets is .59");
+				end();
+				break;
+
+			case "4":
+				chatArea.append("Would you like 2, 3, or 4 strips?");
+				order(strInput);
+			case "2 strips":
+				chatArea.append("2 strips is .39");
+				end();
+				break;
+			case "3 strips":
+				chatArea.append("3 strips is .99");
+				end();
+				break;
+			case "4 strips":
+				chatArea.append("4 strips  is .39");
+				end();
+				break;
+
+			case "5":
+				chatArea.append("A Grilled Sandwhich is .29");
+				end();
+				break;
+
+			case "6":
+				chatArea.append("Would you like 5, 8, or 12 grilled nuggets?");
+				order(strInput);
+			case "5 grilled nuggets":
+				chatArea.append("5 grilled nuggets is .50");
+				end();
+				break;
+			case "8 grilled nuggets":
+				chatArea.append("8 grilled nuggets is .59");
+				end();
+				break;
+			case "12 grilled nuggets":
+				chatArea.append("12 grilled nuggets is .99");
+				end();
+				break;
+
+			case "7":
+				chatArea.append("A Grilled Club is .99");
+				end();
+				break;
+
+			case "8":
+				chatArea.append("A Wrap is .59");
+				end();
+				break;
+			case "Filet":
+				chatArea.append("A filet is .50");
+				end();
+				break;
+			case "Grilled Filet":
+				chatArea.append("A grilled filet is .35");
+				end();
+				break;
+			case "Spicy Filet":
+				chatArea.append("A spicy filet is .90");
+				end();
+				break;
+			// begin drinks
 			case "small tea":
 			case "small soft drink":
 			case "small soda":
-				chatArea.append("That will be $1.79");
+				chatArea.append("That will be static.79");
 				end();
 				break;
 			case "small lemonaid":
@@ -302,313 +291,312 @@ public class MainRunner {
 			case "medium tea":
 			case "medium soda":
 			case "medium soft drink":
-				chatArea.append("That will be $2.15");
+				chatArea.append("That will be .15");
 				end();
 				break;
 			case "large tea":
 			case "large soda":
 			case "large soft drink":
-				chatArea.append("That will be $2.55");
+				chatArea.append("That will be .55");
 				end();
 				break;
 			case "medium lemonaid":
 			case "medium sunjoy":
-				chatArea.append("That will be $2.49");
+				chatArea.append("That will be .49");
 				end();
 				break;
 			case "large sunjoy":
-				chatArea.append("That will be $2.95");
+				chatArea.append("That will be .95");
 				end();
 				break;
 			case "gallon tea":
-				chatArea.append("That will be $6.25");
+				chatArea.append("That will be .25");
 				end();
 				break;
 			case "gallon lemonaid":
-				chatArea.append("That will be $12.00");
+				chatArea.append("That will be .00");
 				end();
 				break;
-//begin breakfast
+			// begin breakfast
 			case "chicken biscuit":
-				chatArea.append("That will be $3.49");
+				chatArea.append("That will be .49");
 				end();
 				break;
 			case "4 minis":
-				chatArea.append("That will be $4.49");
+				chatArea.append("That will be .49");
 				end();
 				break;
 			case "10 minis":
-				chatArea.append("That will be $11.19");
+				chatArea.append("That will be .19");
 				end();
-				break;	
+				break;
 			case "Egg white grill":
-				chatArea.append("That will be $4.85");
+				chatArea.append("That will be .85");
 				end();
 				break;
 			case "Hash Brown scramble bowl":
-				chatArea.append("That will be $4.75");
+				chatArea.append("That will be .75");
 				end();
 				break;
 			case "Hash brown scramble burrito":
-				chatArea.append("That will be $4.75");
+				chatArea.append("That will be .75");
 				end();
 				break;
 			case "chicken egg cheese biscuit":
-				chatArea.append("That will be $4.39");
+				chatArea.append("That will be .39");
 				end();
 				break;
 			case "CEC biscuit":
-				chatArea.append("That will be $4.39");
+				chatArea.append("That will be .39");
 				end();
 				break;
 			case "BEC biscuit":
-				chatArea.append("That will be $4.79");
+				chatArea.append("That will be .79");
 				end();
 				break;
 			case "bacon egg cheese biscuit":
-				chatArea.append("That will be $4.79");
+				chatArea.append("That will be .79");
 				end();
 				break;
 			case "SEC bisciut":
-				chatArea.append("That will be $4.79");
+				chatArea.append("That will be .79");
 				end();
 				break;
 			case "sausage egg cheese biscuit":
-				chatArea.append("That will be $4.79");
+				chatArea.append("That will be .79");
 				end();
 				break;
 			case "chicken egg cheese muffin":
-				chatArea.append("That will be $4.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 			case "CEC muffin":
-				chatArea.append("That will be $4.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 			case "bacon egg cheese muffin":
-				chatArea.append("That will be $3.99");
+				chatArea.append("That will be .99");
 				end();
 				break;
 			case "BEC muffin":
-				chatArea.append("That will be $3.99");
+				chatArea.append("That will be .99");
 				end();
 				break;
 			case "sausage egg cheese muffin":
-				chatArea.append("That will be $3.99");
+				chatArea.append("That will be .99");
 				end();
 				break;
 			case "SEC muffin":
-				chatArea.append("That will be $3.99");
+				chatArea.append("That will be .99");
 				end();
 				break;
 			case "Buttered buscuit":
-				chatArea.append("That will be $1.49");
+				chatArea.append("That will be static.49");
 				end();
 				break;
 			case "Hash brown":
-				chatArea.append("That will be $1.49");
+				chatArea.append("That will be static.49");
 				end();
 				break;
 			case "English Muffin":
-				chatArea.append("That will be $1.69");
+				chatArea.append("That will be static.69");
 				end();
 				break;
 			case "Breakfast filet":
-				chatArea.append("That will be $2.00");
+				chatArea.append("That will be .00");
 				end();
 				break;
-//begin salads
+			// begin salads
 			case "Cobb salad":
 			case "cobb":
-				chatArea.append("That will be $9.39");
+				chatArea.append("That will be .39");
 				end();
 				break;
 			case "Spicy Southwest Salad":
-				chatArea.append("That will be $9.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 			case "Southwest salad":
-				chatArea.append("That will be $9.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 			case "Market salad":
-				chatArea.append("That will be $9.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 			case "salad":
-				chatArea.append("That will be $9.59");
+				chatArea.append("That will be .59");
 				end();
 				break;
 
-//begin sides
+			// begin sides
 			case "small fry":
-				chatArea.append("That will be $2.09");
+				chatArea.append("That will be .09");
 				end();
 				break;
 			case "medium fry":
 			case "kale crunch side salad":
-				chatArea.append("That will be $2.35");
+				chatArea.append("That will be .35");
 				end();
 				break;
 			case "large fry":
-				chatArea.append("That will be $2.75");
+				chatArea.append("That will be .75");
 				end();
 				break;
 			case "small fruit cup":
-				chatArea.append("That will be $2.99");
+				chatArea.append("That will be .99");
 				end();
 				break;
 			case "medium fruit cup":
 			case "side salad":
 			case "medium mac and cheese":
-				chatArea.append("That will be $3.95");
+				chatArea.append("That will be .95");
 				end();
 				break;
 			case "cup chicken soup":
-				chatArea.append("That will be $3.75");
+				chatArea.append("That will be .75");
 				end();
 				break;
 			case "bowl chicken soup":
-				chatArea.append("That will be $5.69");
+				chatArea.append("That will be .69");
 				end();
 				break;
 			case "cup tortilla soup":
-				chatArea.append("That will be $5.19");
+				chatArea.append("That will be .19");
 				end();
 				break;
 			case "bowl tortilla soup":
-				chatArea.append("That will be $7.95");
+				chatArea.append("That will be .95");
 				end();
 				break;
 			case "cookie parfait":
 			case "granola parfait":
 			case "parfait":
-				chatArea.append("That will be $4.65");
+				chatArea.append("That will be .65");
 				end();
 				break;
 			case "chips":
-				chatArea.append("That will be $1.99");
+				chatArea.append("That will be static.99");
 				end();
 				break;
 			case "apple sauce":
-				chatArea.append("That will be $2.29");
+				chatArea.append("That will be .29");
 				end();
 				break;
-//begin treats
+			// begin treats
 			case "frosted lemonaid":
 			case "frosted coffee":
-				chatArea.append("That will be $5.19");
+				chatArea.append("That will be .19");
 				end();
 				break;
 			case "cookie":
-				chatArea.append("That will be $1.55");
+				chatArea.append("That will be static.55");
 				end();
 				break;
 			case "brownie":
-				chatArea.append("That will be $2.15");
+				chatArea.append("That will be .15");
 				end();
 				break;
 			case "milkshake":
-				chatArea.append("That will be $4.29");
+				chatArea.append("That will be .29");
 				end();
 				break;
 			case "icedream cup":
 			case "icecream cup":
-				chatArea.append("That will be $1.35");
+				chatArea.append("That will be static.35");
 				end();
 				break;
 			case "icedream cone":
 			case "icecream cone":
-				chatArea.append("That will be $1.69");
+				chatArea.append("That will be static.69");
 				end();
 				break;
 			default:
 				chatArea.append("Please enter a menu item");
 				order(strInput);
 
-			}
+		}
 
-		}//end order
+	}// end order
 
-	public void end() {
+	public static void end() {
 		chatArea.append("Thank you for choosing Chick-fil-A!");
 		System.exit(0);
-	}//end end
+	}// end end
 
 	/**
 	 * Introduction to the conversation
 	 * Asks the guest for their name and uses it while talking
 	 */
-	public void greeting() {
+	public static void greeting() {
 		Guest newGuest;
 		chatArea.append("May I have a name for the order?");
-		newGuest = new Guest(scanner.nextLine());
+		newGuest = new Guest();
 		chatArea.append("Hello " + newGuest + ", How may I serve you today?");
 		chatArea.append("Take a look at our menu with the matching prices by saying \"menu\"");
-			String strInput = input("If you'd like to order, just say \"order\"");
-				switch(strInput.toLowerCase()){
-				case "menu":
-				case "Menu":
-					menu();
-					break;
-				case "order":
-				case "Order":
-				case "o":
-					order(strInput);
-					break;
-				default:
-					chatArea.append("Please enter a valid command.");
-					greeting();
-					break;
-			}//end switch		
-	}//end greeting
+		String strInput = input("If you'd like to order, just say \"order\"");
+		switch (strInput.toLowerCase()) {
+			case "menu":
+			case "Menu":
+				menu();
+				break;
+			case "order":
+			case "Order":
+			case "o":
+				order(strInput);
+				break;
+			default:
+				chatArea.append("Please enter a valid command.");
+				greeting();
+				break;
+		}// end switch
+	}// end greeting
 
 	/**
 	 * Select which menu to see
 	 */
-	public void menu() {
+	public static void menu() {
 		chatArea.append("Our menus are: Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
 		String strInput = input("Which menu would you like to see?");
-		switch(strInput.toLowerCase()) {
-		case "beverages":
-		case "beverage":
-		case "drinks":
-		case "drink":
-			Beverages.breakfast();
-//			beverageMenu();
-			order(strInput);
-			break;
-		case "breakfast":
-		case "bfast":
-			Breakfast.main(null);
-			order(strInput);
-			break;
-		case "entree":
-			Entrees.main(null);
-			order(strInput);
-			break;
-		case "salads":
-		case "salad":
-			Salad.main(null);
-			order(strInput);
-			break;
-		case "sides":
-		case "side":
-			Side.main(null);
-			order(strInput);
-			break;
-		case "treats":
-		case "treat":
-		case "desserts":
-		case "dessert":
-			Treat.main(null);
-			order(strInput);
-			break;
-		default:
-			chatArea.append("I'm sorry could you repeat that please?");
-			menu();
-			break;
-		}//end switch
-	}//end menu
+		switch (strInput.toLowerCase()) {
+			case "beverages":
+			case "beverage":
+			case "drinks":
+			case "drink":
+				Beverages.beverageMenu();
+				order(strInput);
+				break;
+			case "breakfast":
+			case "bfast":
+				Breakfast.breakfast();
+				order(strInput);
+				break;
+			case "entree":
+				Entree.entree();
+				order(strInput);
+				break;
+			case "salads":
+			case "salad":
+				Salad.salad();
+				order(strInput);
+				break;
+			case "sides":
+			case "side":
+				Side.sides();
+				order(strInput);
+				break;
+			case "treats":
+			case "treat":
+			case "desserts":
+			case "dessert":
+				Treat.treat();
+				order(strInput);
+				break;
+			default:
+				chatArea.append("I'm sorry could you repeat that please?");
+				menu();
+				break;
+		}// end switch
+	}// end menu
 
-}//end Driver
+}// end Driver

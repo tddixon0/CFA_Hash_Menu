@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Treat {
 	
-	public Map<String, Object> treat() {
+	public static Map<String, Object> treat() {
 		Map<String, Object> dessert = new HashMap<String, Object>();
 		dessert.put("Frosted Lemonaid", 4.19);
 		dessert.put("Frosted Coffee", 4.19);
