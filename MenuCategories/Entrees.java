@@ -1,10 +1,12 @@
-package src;
+package MenuCategories;
 
 import java.util.HashMap;
 import java.util.Map;
 //Map<K,V>
 // K = The type of keys maintained by the map
 // V = The type of mapped values
+
+import src.Driver;
 
 public class Entrees extends Driver{
 	

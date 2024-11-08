@@ -2,7 +2,7 @@ package src;
 import java.util.Scanner;
 
 public class Driver {
-    public static void main (String[] args) {
+    public void main (String[] args) {
         Driver driver = new Driver();
         System.out.println("Welcome to CFA! What would you like to do?");
         driver.order();

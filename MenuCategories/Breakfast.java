@@ -1,14 +1,15 @@
-package src;
+package MenuCategories;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import src.Driver;
 
 public class Breakfast extends Driver{
 
 	public static final Double CB = 3.49;
 
-	@SuppressWarnings("unused")
-	public static void main (String args[]) {
+		public Map<String, Double> breakfast() {
 		Map<String, Double> bfast = new HashMap<String, Double>();
 		bfast.put("Chicken Biscuit", 3.49);
 		bfast.put("4 minis", 4.49);
@@ -43,10 +44,11 @@ public class Breakfast extends Driver{
 		System.out.printf("English Muffin\t $%.2f\n", bfast.get("English Muffin"));
 		System.out.printf("Hash Browns\t $%.2f\n", bfast.get("Hash Browns"));
 		System.out.printf("Breakfast Filet\t $%.2f\n", bfast.get("Breakfast Filet"));
+		
+		return bfast;
 
-	}//end main
-	
+	}
 	public double get(String price) {
 		return 0;
 	}
-}//end Breakfast
+  }

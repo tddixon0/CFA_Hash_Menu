@@ -15,7 +15,7 @@
 - [Quick Start](#quick-start)
 - [Testing](#testing)
 - [API](#requirements)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -47,5 +47,9 @@ Additional instructions for testing the application.
 ## API
 TODO: API Reference with examples, or a link to a wiki or other documentation source.
 
-## Acknowledgements
+##TO-DO
+Want to add spotless plugin to make code format nicer
+
+
+## Acknowledgments
 Co-creator: Von

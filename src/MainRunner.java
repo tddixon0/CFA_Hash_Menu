@@ -1,18 +1,23 @@
 package src;
 /**
  * Program created to represent Face-to-Face order taking from a guest at Chick-fil-A
- * Program created to represent Face-to-Face order taking from a guest
  * @author TylerDixon
  * @author EthanVonHagel
  */
 
 
-import javax.swing.*;
-
+import MenuCategories.Beverages;
+import MenuCategories.Breakfast;
+import MenuCategories.Entrees;
+import MenuCategories.Salads;
+import MenuCategories.Sides;
+import MenuCategories.Treats;
+import src.Interface2;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class MainRunner {
 	static Scanner scanner = new Scanner(System.in);
@@ -26,99 +31,8 @@ public class MainRunner {
 	static Treats treat = new Treats();
 //	static ID id = new ID();
 //	Hashing hash = new Hashing(0); 
-	private JFrame frame;
     private JTextArea chatArea;
-    private JTextField inputField;
 	
-	/**
-	 * ------------------------------------------------------
-	 * @param args
-	 * @return 
-	 */
-	
-public void Interface2() {
-    	/**
-    	 * main frame
-    	 */
-        frame = new JFrame("CFATwo");
-        frame.setSize(500, 500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        /**
-         * text area
-         */
-        chatArea = new JTextArea();
-        chatArea.setEditable(false);
-        chatArea.setWrapStyleWord(true);
-        chatArea.setLineWrap(true);
-
-        /**
-         * scroll
-         */
-        JScrollPane scrollPane = new JScrollPane(chatArea);
-        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        /**
-         * User input
-         */
-        inputField = new JTextField(2);
-
-        /**
-         * Send button
-         */
-        JButton sendButton = new JButton("Send");
-        sendButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Message();
-            }
-        });
-
-        JPanel inputPanel = new JPanel();
-        inputPanel.setLayout(new BorderLayout());
-        inputPanel.add(inputField, BorderLayout.CENTER);
-        inputPanel.add(sendButton, BorderLayout.EAST);
-
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(inputPanel, BorderLayout.SOUTH);
-
-        /**
-         * Prompt
-         */
-        chatArea.append("Welcome to the CFATwo!\n");
-        chatArea.append("Are you an employee or guest?.\n");
-
-        frame.setVisible(true);
-    }//end public interface2
-	
-private void Message() {
-    String message = inputField.getText();
-    if (!message.isEmpty()) {
-        chatArea.append("You: " + message + "\n");
-        inputField.setText("");
-
-        UserInput(message);
-        entree(message);
-        order(message);
-        
-    }
-}//end sendMessage
-
-private void UserInput(String input) {
-    if (input.equalsIgnoreCase("help")) {
-        chatArea.append("Chat Box Help:\n");
-        chatArea.append("1. Type 'hello' to greet.\n");
-        chatArea.append("2. Type 'bye' to exit.\n");
-        // Add more commands and responses as needed
-    } else if (input.equalsIgnoreCase("hello")) {
-        chatArea.append("CFATwo: Hello there!\n");
-    } else if (input.equalsIgnoreCase("bye")) {
-        chatArea.append("CFATwo: Goodbye!\n");
-        // You can exit the application or perform other actions here
-    } else {
-        chatArea.append("CFATwo: I didn't understand that. Type 'help' for assistance.\n");
-    }
-}//end UserInput
-
 
 	/**
 	 * ------------------------------------------------------------------
@@ -128,7 +42,6 @@ private void UserInput(String input) {
 	public static void main (String[] args) {
 		MainRunner driver = new MainRunner();
 		driver.id();
-		driver.Interface2();
 	}//end main
 
 	/**
