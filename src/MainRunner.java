@@ -16,7 +16,6 @@ import java.awt.*;
 import java.util.Scanner;
 import javax.swing.*;
 
-
 public class MainRunner {
 	static Scanner scanner = new Scanner(System.in);
 	static Beverages bev = new Beverages();
@@ -29,17 +28,43 @@ public class MainRunner {
 	static Treat treat = new Treat();
 	// static ID id = new ID();
 	// Hashing hash = new Hashing(0);
-	private static JTextArea chatArea;
-
+	public static JTextArea chatArea;
 	public static void main(String[] args) {
-		MainRunner.id();
+		MainRunner.greeting();
 	}// end main
+
+	/**
+	 * Introduction to the conversation
+	 * Asks the guest for their name and uses it while talking
+	 */
+	public static void greeting() {
+		Guest newGuest;
+		System.out.println("May I have a name for the order?");
+		newGuest = new Guest();
+		System.out.println("Hello " + newGuest + ", How may I serve you today?");
+		System.out.println("Take a look at our menu with the matching prices by saying \"menu\"");
+		String strInput = input("If you'd like to order, just say \"order\"");
+		switch (strInput.toLowerCase()) {
+			case "menu":
+			case "Menu":
+				menu();
+				break;
+			case "order":
+			case "Order":
+			case "o":
+				order(strInput);
+				break;
+			default:
+				System.out.println("Please enter a valid command.");
+				greeting();
+				break;
+		}// end switch
+	}// end greeting
 
 	/**
 	 * This sets input from user as String to return to next line
 	 */
 	private static String input(String input) {
-		chatArea.append(input);
 		return scanner.nextLine();
 	}// end input
 
@@ -54,12 +79,12 @@ public class MainRunner {
 			case "0":
 			case "Guest":
 			case "guest":
-				chatArea.append("User credentials accepted.");
-				chatArea.append("Thank you for choosing Chick-fil-A!");
+				System.out.println("User credentials accepted.");
+				System.out.println("Thank you for choosing Chick-fil-A!");
 				greeting();
 				break;
 			default:
-				chatArea.append("Please enter a valid Employee ID");
+				System.out.println("Please enter a valid Employee ID");
 				id();
 				break;
 		}// end switch
@@ -70,104 +95,104 @@ public class MainRunner {
 		switch (strInput.toLowerCase()) {
 			case "1":
 			case "cfa sandwhich":
-				chatArea.append("A CFA Sandwhich is 4.75");
+				System.out.println("A CFA Sandwhich is 4.75");
 				end();
 				break;
 
 			case "cfa delux":
 			case "1 delux":
-				chatArea.append("A CFA Delux is .45");
+				System.out.println("A CFA Delux is .45");
 				end();
 				break;
 
 			case "2":
 			case "spicy sandwhich":
-				chatArea.append("A Spicy Sandwhich is .15");
+				System.out.println("A Spicy Sandwhich is .15");
 				end();
 				break;
 
 			case "spicy delux":
 			case "2 delux":
-				chatArea.append("A Spicy Delux is .85");
+				System.out.println("A Spicy Delux is .85");
 				end();
 				break;
 
 			case "3":
-				chatArea.append("Would you like 5, 8, 12, or 30 nuggets?");
+				System.out.println("Would you like 5, 8, 12, or 30 nuggets?");
 				order(strInput);
 			case "5 nuggets":
-				chatArea.append("5 nuggets is .00");
+				System.out.println("5 nuggets is .00");
 				end();
 				break;
 			case "8 nuggets":
-				chatArea.append("8 nuggets is is .75");
+				System.out.println("8 nuggets is is .75");
 				end();
 				break;
 			case "12 nuggets":
-				chatArea.append("12 nuggets is .68");
+				System.out.println("12 nuggets is .68");
 				end();
 				break;
 			case "30 nuggets":
-				chatArea.append("30 nuggets is .59");
+				System.out.println("30 nuggets is .59");
 				end();
 				break;
 
 			case "4":
-				chatArea.append("Would you like 2, 3, or 4 strips?");
+				System.out.println("Would you like 2, 3, or 4 strips?");
 				order(strInput);
 			case "2 strips":
-				chatArea.append("2 strips is .39");
+				System.out.println("2 strips is .39");
 				end();
 				break;
 			case "3 strips":
-				chatArea.append("3 strips is .99");
+				System.out.println("3 strips is .99");
 				end();
 				break;
 			case "4 strips":
-				chatArea.append("4 strips  is .39");
+				System.out.println("4 strips  is .39");
 				end();
 				break;
 
 			case "5":
-				chatArea.append("A Grilled Sandwhich is .29");
+				System.out.println("A Grilled Sandwhich is .29");
 				end();
 				break;
 
 			case "6":
-				chatArea.append("Would you like 5, 8, or 12 grilled nuggets?");
+				System.out.println("Would you like 5, 8, or 12 grilled nuggets?");
 				order(strInput);
 			case "5 grilled nuggets":
-				chatArea.append("5 grilled nuggets is .50");
+				System.out.println("5 grilled nuggets is .50");
 				end();
 				break;
 			case "8 grilled nuggets":
-				chatArea.append("8 grilled nuggets is .59");
+				System.out.println("8 grilled nuggets is .59");
 				end();
 				break;
 			case "12 grilled nuggets":
-				chatArea.append("12 grilled nuggets is .99");
+				System.out.println("12 grilled nuggets is .99");
 				end();
 				break;
 
 			case "7":
-				chatArea.append("A Grilled Club is .99");
+				System.out.println("A Grilled Club is .99");
 				end();
 				break;
 
 			case "8":
-				chatArea.append("A Wrap is .59");
+				System.out.println("A Wrap is .59");
 				end();
 				break;
 			case "Filet":
-				chatArea.append("A filet is .50");
+				System.out.println("A filet is .50");
 				end();
 				break;
 			case "Grilled Filet":
-				chatArea.append("A grilled filet is .35");
+				System.out.println("A grilled filet is .35");
 				end();
 				break;
 			case "Spicy Filet":
-				chatArea.append("A spicy filet is .90");
+				System.out.println("A spicy filet is .90");
 				end();
 				break;
 		}
@@ -179,111 +204,111 @@ public class MainRunner {
 			// begin entrees
 			case "1":
 			case "cfa sandwhich":
-				chatArea.append("A CFA Sandwhich is 4.75");
+				System.out.println("A CFA Sandwhich is 4.75");
 				end();
 				break;
 
 			case "cfa delux":
 			case "1 delux":
-				chatArea.append("A CFA Delux is .45");
+				System.out.println("A CFA Delux is .45");
 				end();
 				break;
 
 			case "2":
 			case "spicy sandwhich":
-				chatArea.append("A Spicy Sandwhich is .15");
+				System.out.println("A Spicy Sandwhich is .15");
 				end();
 				break;
 
 			case "spicy delux":
 			case "2 delux":
-				chatArea.append("A Spicy Delux is .85");
+				System.out.println("A Spicy Delux is .85");
 				end();
 				break;
 
 			case "3":
-				chatArea.append("Would you like 5, 8, 12, or 30 nuggets?");
+				System.out.println("Would you like 5, 8, 12, or 30 nuggets?");
 				order(strInput);
 			case "5 nuggets":
-				chatArea.append("5 nuggets is .00");
+				System.out.println("5 nuggets is .00");
 				end();
 				break;
 			case "8 nuggets":
-				chatArea.append("8 nuggets is is .75");
+				System.out.println("8 nuggets is is .75");
 				end();
 				break;
 			case "12 nuggets":
-				chatArea.append("12 nuggets is .68");
+				System.out.println("12 nuggets is .68");
 				end();
 				break;
 			case "30 nuggets":
-				chatArea.append("30 nuggets is .59");
+				System.out.println("30 nuggets is .59");
 				end();
 				break;
 
 			case "4":
-				chatArea.append("Would you like 2, 3, or 4 strips?");
+				System.out.println("Would you like 2, 3, or 4 strips?");
 				order(strInput);
 			case "2 strips":
-				chatArea.append("2 strips is .39");
+				System.out.println("2 strips is .39");
 				end();
 				break;
 			case "3 strips":
-				chatArea.append("3 strips is .99");
+				System.out.println("3 strips is .99");
 				end();
 				break;
 			case "4 strips":
-				chatArea.append("4 strips  is .39");
+				System.out.println("4 strips  is .39");
 				end();
 				break;
 
 			case "5":
-				chatArea.append("A Grilled Sandwhich is .29");
+				System.out.println("A Grilled Sandwhich is .29");
 				end();
 				break;
 
 			case "6":
-				chatArea.append("Would you like 5, 8, or 12 grilled nuggets?");
+				System.out.println("Would you like 5, 8, or 12 grilled nuggets?");
 				order(strInput);
 			case "5 grilled nuggets":
-				chatArea.append("5 grilled nuggets is .50");
+				System.out.println("5 grilled nuggets is .50");
 				end();
 				break;
 			case "8 grilled nuggets":
-				chatArea.append("8 grilled nuggets is .59");
+				System.out.println("8 grilled nuggets is .59");
 				end();
 				break;
 			case "12 grilled nuggets":
-				chatArea.append("12 grilled nuggets is .99");
+				System.out.println("12 grilled nuggets is .99");
 				end();
 				break;
 
 			case "7":
-				chatArea.append("A Grilled Club is .99");
+				System.out.println("A Grilled Club is .99");
 				end();
 				break;
 
 			case "8":
-				chatArea.append("A Wrap is .59");
+				System.out.println("A Wrap is .59");
 				end();
 				break;
 			case "Filet":
-				chatArea.append("A filet is .50");
+				System.out.println("A filet is .50");
 				end();
 				break;
 			case "Grilled Filet":
-				chatArea.append("A grilled filet is .35");
+				System.out.println("A grilled filet is .35");
 				end();
 				break;
 			case "Spicy Filet":
-				chatArea.append("A spicy filet is .90");
+				System.out.println("A spicy filet is .90");
 				end();
 				break;
 			// begin drinks
 			case "small tea":
 			case "small soft drink":
 			case "small soda":
-				chatArea.append("That will be static.79");
+				System.out.println("That will be static.79");
 				end();
 				break;
 			case "small lemonaid":
@@ -291,228 +316,228 @@ public class MainRunner {
 			case "medium tea":
 			case "medium soda":
 			case "medium soft drink":
-				chatArea.append("That will be .15");
+				System.out.println("That will be .15");
 				end();
 				break;
 			case "large tea":
 			case "large soda":
 			case "large soft drink":
-				chatArea.append("That will be .55");
+				System.out.println("That will be .55");
 				end();
 				break;
 			case "medium lemonaid":
 			case "medium sunjoy":
-				chatArea.append("That will be .49");
+				System.out.println("That will be .49");
 				end();
 				break;
 			case "large sunjoy":
-				chatArea.append("That will be .95");
+				System.out.println("That will be .95");
 				end();
 				break;
 			case "gallon tea":
-				chatArea.append("That will be .25");
+				System.out.println("That will be .25");
 				end();
 				break;
 			case "gallon lemonaid":
-				chatArea.append("That will be .00");
+				System.out.println("That will be .00");
 				end();
 				break;
 			// begin breakfast
 			case "chicken biscuit":
-				chatArea.append("That will be .49");
+				System.out.println("That will be .49");
 				end();
 				break;
 			case "4 minis":
-				chatArea.append("That will be .49");
+				System.out.println("That will be .49");
 				end();
 				break;
 			case "10 minis":
-				chatArea.append("That will be .19");
+				System.out.println("That will be .19");
 				end();
 				break;
 			case "Egg white grill":
-				chatArea.append("That will be .85");
+				System.out.println("That will be .85");
 				end();
 				break;
 			case "Hash Brown scramble bowl":
-				chatArea.append("That will be .75");
+				System.out.println("That will be .75");
 				end();
 				break;
 			case "Hash brown scramble burrito":
-				chatArea.append("That will be .75");
+				System.out.println("That will be .75");
 				end();
 				break;
 			case "chicken egg cheese biscuit":
-				chatArea.append("That will be .39");
+				System.out.println("That will be .39");
 				end();
 				break;
 			case "CEC biscuit":
-				chatArea.append("That will be .39");
+				System.out.println("That will be .39");
 				end();
 				break;
 			case "BEC biscuit":
-				chatArea.append("That will be .79");
+				System.out.println("That will be .79");
 				end();
 				break;
 			case "bacon egg cheese biscuit":
-				chatArea.append("That will be .79");
+				System.out.println("That will be .79");
 				end();
 				break;
 			case "SEC bisciut":
-				chatArea.append("That will be .79");
+				System.out.println("That will be .79");
 				end();
 				break;
 			case "sausage egg cheese biscuit":
-				chatArea.append("That will be .79");
+				System.out.println("That will be .79");
 				end();
 				break;
 			case "chicken egg cheese muffin":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 			case "CEC muffin":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 			case "bacon egg cheese muffin":
-				chatArea.append("That will be .99");
+				System.out.println("That will be .99");
 				end();
 				break;
 			case "BEC muffin":
-				chatArea.append("That will be .99");
+				System.out.println("That will be .99");
 				end();
 				break;
 			case "sausage egg cheese muffin":
-				chatArea.append("That will be .99");
+				System.out.println("That will be .99");
 				end();
 				break;
 			case "SEC muffin":
-				chatArea.append("That will be .99");
+				System.out.println("That will be .99");
 				end();
 				break;
 			case "Buttered buscuit":
-				chatArea.append("That will be static.49");
+				System.out.println("That will be static.49");
 				end();
 				break;
 			case "Hash brown":
-				chatArea.append("That will be static.49");
+				System.out.println("That will be static.49");
 				end();
 				break;
 			case "English Muffin":
-				chatArea.append("That will be static.69");
+				System.out.println("That will be static.69");
 				end();
 				break;
 			case "Breakfast filet":
-				chatArea.append("That will be .00");
+				System.out.println("That will be .00");
 				end();
 				break;
 			// begin salads
 			case "Cobb salad":
 			case "cobb":
-				chatArea.append("That will be .39");
+				System.out.println("That will be .39");
 				end();
 				break;
 			case "Spicy Southwest Salad":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 			case "Southwest salad":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 			case "Market salad":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 			case "salad":
-				chatArea.append("That will be .59");
+				System.out.println("That will be .59");
 				end();
 				break;
 
 			// begin sides
 			case "small fry":
-				chatArea.append("That will be .09");
+				System.out.println("That will be .09");
 				end();
 				break;
 			case "medium fry":
 			case "kale crunch side salad":
-				chatArea.append("That will be .35");
+				System.out.println("That will be .35");
 				end();
 				break;
 			case "large fry":
-				chatArea.append("That will be .75");
+				System.out.println("That will be .75");
 				end();
 				break;
 			case "small fruit cup":
-				chatArea.append("That will be .99");
+				System.out.println("That will be .99");
 				end();
 				break;
 			case "medium fruit cup":
 			case "side salad":
 			case "medium mac and cheese":
-				chatArea.append("That will be .95");
+				System.out.println("That will be .95");
 				end();
 				break;
 			case "cup chicken soup":
-				chatArea.append("That will be .75");
+				System.out.println("That will be .75");
 				end();
 				break;
 			case "bowl chicken soup":
-				chatArea.append("That will be .69");
+				System.out.println("That will be .69");
 				end();
 				break;
 			case "cup tortilla soup":
-				chatArea.append("That will be .19");
+				System.out.println("That will be .19");
 				end();
 				break;
 			case "bowl tortilla soup":
-				chatArea.append("That will be .95");
+				System.out.println("That will be .95");
 				end();
 				break;
 			case "cookie parfait":
 			case "granola parfait":
 			case "parfait":
-				chatArea.append("That will be .65");
+				System.out.println("That will be .65");
 				end();
 				break;
 			case "chips":
-				chatArea.append("That will be static.99");
+				System.out.println("That will be static.99");
 				end();
 				break;
 			case "apple sauce":
-				chatArea.append("That will be .29");
+				System.out.println("That will be .29");
 				end();
 				break;
 			// begin treats
 			case "frosted lemonaid":
 			case "frosted coffee":
-				chatArea.append("That will be .19");
+				System.out.println("That will be .19");
 				end();
 				break;
 			case "cookie":
-				chatArea.append("That will be static.55");
+				System.out.println("That will be static.55");
 				end();
 				break;
 			case "brownie":
-				chatArea.append("That will be .15");
+				System.out.println("That will be .15");
 				end();
 				break;
 			case "milkshake":
-				chatArea.append("That will be .29");
+				System.out.println("That will be .29");
 				end();
 				break;
 			case "icedream cup":
 			case "icecream cup":
-				chatArea.append("That will be static.35");
+				System.out.println("That will be static.35");
 				end();
 				break;
 			case "icedream cone":
 			case "icecream cone":
-				chatArea.append("That will be static.69");
+				System.out.println("That will be static.69");
 				end();
 				break;
 			default:
-				chatArea.append("Please enter a menu item");
+				System.out.println("Please enter a menu item");
 				order(strInput);
 
 		}
@@ -520,43 +545,15 @@ public class MainRunner {
 	}// end order
 
 	public static void end() {
-		chatArea.append("Thank you for choosing Chick-fil-A!");
+		System.out.println("Thank you for choosing Chick-fil-A!");
 		System.exit(0);
 	}// end end
-
-	/**
-	 * Introduction to the conversation
-	 * Asks the guest for their name and uses it while talking
-	 */
-	public static void greeting() {
-		Guest newGuest;
-		chatArea.append("May I have a name for the order?");
-		newGuest = new Guest();
-		chatArea.append("Hello " + newGuest + ", How may I serve you today?");
-		chatArea.append("Take a look at our menu with the matching prices by saying \"menu\"");
-		String strInput = input("If you'd like to order, just say \"order\"");
-		switch (strInput.toLowerCase()) {
-			case "menu":
-			case "Menu":
-				menu();
-				break;
-			case "order":
-			case "Order":
-			case "o":
-				order(strInput);
-				break;
-			default:
-				chatArea.append("Please enter a valid command.");
-				greeting();
-				break;
-		}// end switch
-	}// end greeting
 
 	/**
 	 * Select which menu to see
 	 */
 	public static void menu() {
-		chatArea.append("Our menus are: Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
+		System.out.println("Our menus are: Beverages, Entrees, Salads, Sides, Breakfast, and Treats");
 		String strInput = input("Which menu would you like to see?");
 		switch (strInput.toLowerCase()) {
 			case "beverages":
@@ -593,7 +590,7 @@ public class MainRunner {
 				order(strInput);
 				break;
 			default:
-				chatArea.append("I'm sorry could you repeat that please?");
+				System.out.println("I'm sorry could you repeat that please?");
 				menu();
 				break;
 		}// end switch

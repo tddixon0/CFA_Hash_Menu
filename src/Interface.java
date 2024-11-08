@@ -6,13 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 
-public class Interface2 {
+public class Interface {
     private JFrame frame;
     private JTextArea chatArea;
     private JTextField inputField;
     Scanner scanner = new Scanner(System.in);
 
-    public Interface2() {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new Interface();
+            }
+        });
+    }// end main
+
+    public Interface() {
 
         /**
          * main frame
@@ -66,14 +74,6 @@ public class Interface2 {
 
         frame.setVisible(true);
     }// end public interface2
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new Interface2();
-            }
-        });
-    }// end main
 
     private void Message() {
         String message = inputField.getText();

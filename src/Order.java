@@ -13,7 +13,7 @@ public class Order {
 	}// end main
 
 	private static Integer input(int i) {
-		return null;
+		return i;
 	}
 
 }

@@ -1,13 +1,13 @@
 package src;
 
-
-public class Hashing extends Driver{
+public class Hashing extends Driver {
 	private int curSize, maxSize;
-	private String[] name; //key
-	private Double[] price; //value
-	
+	private String[] name; // key
+	private Double[] price; // value
+
 	/**
 	 * Constructor
+	 * 
 	 * @param capacity
 	 */
 	public Hashing(int capacity) {
@@ -15,21 +15,21 @@ public class Hashing extends Driver{
 		maxSize = capacity;
 		name = new String[maxSize];
 		price = new Double[maxSize];
-	}//end Hashing
-	
+	}// end Hashing
+
 	/**
 	 * Get with Modulus
+	 * 
 	 * @param KEY
 	 * @return
 	 */
 	private int hash(String KEY) {
 		return KEY.hashCode() % maxSize;
-	}//end hash
-	
-	
-	
+	}// end hash
+
 	/**
 	 * get value
+	 * 
 	 * @param KEY
 	 * @return
 	 */
@@ -41,74 +41,80 @@ public class Hashing extends Driver{
 			i = (i + 1) % maxSize;
 		}
 		return null;
-	}//end get
-	
+	}// end get
+
 	/**
 	 * Returns size of table
+	 * 
 	 * @return
 	 */
 	public int getSize() {
 		return curSize;
-	}//end getSize
-	
+	}// end getSize
+
 	/**
 	 * Do-while add method to add item to menu
+	 * 
 	 * @param name
 	 * @param price
 	 */
+	@SuppressWarnings("unlikely-arg-type")
 	public void insert(String KEY, Double value) {
 		int add = hash(name);
 		int i = add;
-		
+
 		do {
-			if(name[i] == null) {
+			if (name[i] == null) {
 				name[i] = KEY;
 				price[i] = value;
 				curSize++;
 				return;
-			}//end if
+			} // end if
 			if (name[i].equals(name)) {
+				// this 'name' has a problem w it
 				price[i] = value;
 				return;
-			}//end if
+			} // end if
 			i = (i + 1) % maxSize;
-		}//end do
+		} // end do
 		while (i != add);
-	}//end insert
-	
+	}// end insert
+
 	private int hash(String[] name2) {
 		return 0;
 	}
 
 	/**
 	 * remove item from table
+	 * 
 	 * @param name
 	 */
 	public void remove(String KEY) {
 		if (!conatins(name))
 			return;
 		int i = hash(KEY);
-		while(!KEY.equals(name[i]))
+		while (!KEY.equals(name[i]))
 			i = (i + 1) % maxSize;
 		Double.parseDouble(null);
 		// name[i] = price[i] = null;
-		
+
 		curSize--;
-	}//end remove
-	
+	}// end remove
+
 	private boolean conatins(String[] name2) {
 		return false;
 	}
 
 	/**
 	 * Returns name if in table
+	 * 
 	 * @param name
 	 * @return
 	 */
 	public boolean conatins(String KEY) {
 		return get(KEY) != null;
-	}//end contains
-	
+	}// end contains
+
 	/**
 	 * Print method
 	 */
@@ -118,6 +124,6 @@ public class Hashing extends Driver{
 			if (name[i] != null)
 				System.out.println(name[i] + " " + price[i]);
 		System.out.println();
-	}//end print
-	
-}//end Hashing
+	}// end print
+
+}// end Hashing
