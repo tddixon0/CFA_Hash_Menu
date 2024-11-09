@@ -29,8 +29,10 @@ public class MainRunner {
 	// static ID id = new ID();
 	// Hashing hash = new Hashing(0);
 	public static JTextArea chatArea;
+
 	public static void main(String[] args) {
-		MainRunner.greeting();
+		// MainRunner.greeting();
+		Guest.getGuestName();
 	}// end main
 
 	/**
@@ -38,10 +40,6 @@ public class MainRunner {
 	 * Asks the guest for their name and uses it while talking
 	 */
 	public static void greeting() {
-		Guest newGuest;
-		System.out.println("May I have a name for the order?");
-		newGuest = new Guest();
-		System.out.println("Hello " + newGuest + ", How may I serve you today?");
 		System.out.println("Take a look at our menu with the matching prices by saying \"menu\"");
 		String strInput = input("If you'd like to order, just say \"order\"");
 		switch (strInput.toLowerCase()) {
@@ -67,28 +65,6 @@ public class MainRunner {
 	private static String input(String input) {
 		return scanner.nextLine();
 	}// end input
-
-	/**
-	 * This will verify if the user is an employee
-	 */
-	private static void id() {
-		String strInput = input("Do you have an ID? If not, enter \"Guest\":");
-		switch (strInput.toLowerCase()) {
-			case "1687":
-			case "2023":
-			case "0":
-			case "Guest":
-			case "guest":
-				System.out.println("User credentials accepted.");
-				System.out.println("Thank you for choosing Chick-fil-A!");
-				greeting();
-				break;
-			default:
-				System.out.println("Please enter a valid Employee ID");
-				id();
-				break;
-		}// end switch
-	}// end id
 
 	public void entree(String input) {
 		String strInput = input("What would you like?");

@@ -52,7 +52,7 @@ TODO: API Reference with examples, or a link to a wiki or other documentation so
 
 ## TO-DO
 
-Want to add spotless plugin to make code format nicer
+Make a UML or an archatecture diagram of project
 
 ## Acknowledgments
 
