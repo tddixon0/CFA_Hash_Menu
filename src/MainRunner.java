@@ -33,7 +33,7 @@ public class MainRunner {
 	public static void main(String[] args) {
 		// MainRunner.greeting();
 		// Guest.getGuestName();
-		Beverages.beverage();
+		Beverages.beverageMenu();
 	}// end main
 
 	/**
@@ -537,7 +537,7 @@ public class MainRunner {
 			case "beverage":
 			case "drinks":
 			case "drink":
-				Beverages.beverage();
+				Beverages.beverageMenu();
 				order(strInput);
 				break;
 			case "breakfast":

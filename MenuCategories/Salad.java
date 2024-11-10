@@ -6,28 +6,26 @@ package MenuCategories;
  */
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.Map.Entry;
 
 public class Salad {
-	
-	public static Map<String, Object> salad() {
-		Map<String, Object> salad = new HashMap<String, Object>();
-		salad.put("Cobb Salad", 9.39);
-		salad.put("Spicy Southwest Salad", 9.59);
-		salad.put("Market Salad", 9.59);
 
-		System.out.printf("Cobb Salad\t $%.2f\n", salad.get("Cobb Salad"));
-		System.out.printf("Spicy Southwest Salad\t $%.2f\n", salad.get("Spicy Southwest Salad"));
-		System.out.printf("Market Salad\t $%.2f\n", salad.get("Market Salad"));
-			return salad;
-	}//end main
-	
-	public static boolean hasDuplicate(List<Double> list) {
-		Set<Double> set = new HashSet<>(list);
-		return set.size() < list.size();
-	}
+	public static void salad() {
+		Map<String, Double> saladMenu = new HashMap<String, Double>();
+		saladMenu.put("Cobb Salad", 9.39);
+		saladMenu.put("Spicy Southwest Salad", 9.59);
+		saladMenu.put("Market Salad", 9.59);
 
-}//end Salads
+		StringBuilder sb = new StringBuilder();
+		for (Entry<String, Double> entry : saladMenu.entrySet()) {
+			sb.append(entry.getKey())
+					.append(":  ---  $")
+					.append(String.format("%.2f", entry.getValue()))
+					.append("\n");
+		}
+		String result = sb.toString();
+		System.out.println(result);
+	}// end main
+
+}// end Salads

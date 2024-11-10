@@ -7,28 +7,29 @@ package MenuCategories;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Treat {
-	
-	public static Map<String, Object> treat() {
-		Map<String, Object> dessert = new HashMap<String, Object>();
-		dessert.put("Frosted Lemonaid", 4.19);
-		dessert.put("Frosted Coffee", 4.19);
-		dessert.put("Cookie", 1.55);
-		dessert.put("Brownie", 2.15);
-		dessert.put("Milkshake", 4.29);
-		dessert.put("IceDream Cup", 1.35);
-		dessert.put("IceDream Cone", 1.69);
 
-		System.out.printf("Frosted Lemonaid\t $%.2f\n", dessert.get("Frosted Lemonaid"));
-		System.out.printf("Frosted Coffee\t $%.2f\n", dessert.get("Frosted Coffee"));
-		System.out.printf("Cookie\t $%.2f\n", dessert.get("Cookie"));
-		System.out.printf("Brownie\t $%.2f\n", dessert.get("Brownie"));
-		System.out.printf("Milkshake\t $%.2f\n", dessert.get("Milkshake"));
-		System.out.printf("IceDream Cup\t $%.2f\n", dessert.get("IceDream Cup"));
-		System.out.printf("IceDream Cone\t $%.2f\n", dessert.get("IceDream Cone"));
-	
-	return dessert;
-}
+	public static void treat() {
+		Map<String, Double> dessertMenu = new HashMap<String, Double>();
+		dessertMenu.put("Frosted Lemonaid", 4.19);
+		dessertMenu.put("Frosted Coffee", 4.19);
+		dessertMenu.put("Cookie", 1.55);
+		dessertMenu.put("Brownie", 2.15);
+		dessertMenu.put("Milkshake", 4.29);
+		dessertMenu.put("IceDream Cup", 1.35);
+		dessertMenu.put("IceDream Cone", 1.69);
+
+		StringBuilder sb = new StringBuilder();
+		for (Entry<String, Double> entry : dessertMenu.entrySet()) {
+			sb.append(entry.getKey())
+					.append(":  ---  $")
+					.append(String.format("%.2f", entry.getValue()))
+					.append("\n");
+		}
+		String result = sb.toString();
+		System.out.println(result);
+	}
 
 }
