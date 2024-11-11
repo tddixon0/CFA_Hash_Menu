@@ -17,10 +17,11 @@ public class Guest {
 	}// end Guest method
 
 	public static void getGuestName() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("May I have a name for the order?");
-		String newGuestName = scanner.nextLine();
-		System.out.println("Hello " + newGuestName + ", How may I serve you today?");
+		try (Scanner scanner = new Scanner(System.in)) {
+			System.out.println("May I have a name for the order?");
+			String newGuestName = scanner.nextLine();
+			System.out.println("Hello " + newGuestName + ", How may I serve you today?");
+		}
 	}// end getGuestName
 
 	private static void id() {
